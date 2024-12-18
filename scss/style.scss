@@ -2,17 +2,17 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 
-//Importing Sticky Utility Classes
-@import "sticky/variables";
+//Importing AllOfDubai Utility Classes
+@import "AllOfDubai/variables";
 
 //Importing Sturctural Elements
-@import "sticky/typography";
-@import "sticky/structure";
-@import "sticky/logos";
-@import "sticky/header-bar";
-@import "sticky/footer-bar";
-@import "sticky/menu";
-@import "sticky/utilities";
+@import "AllOfDubai/typography";
+@import "AllOfDubai/structure";
+@import "AllOfDubai/logos";
+@import "AllOfDubai/header-bar";
+@import "AllOfDubai/footer-bar";
+@import "AllOfDubai/menu";
+@import "AllOfDubai/utilities";
 
 //Importing Components
 @import "components/preloader";
@@ -51,12 +51,12 @@
 @import "pages/map";
 @import "pages/media";
 @import "pages/timeline";
-//Rebuilt in Sticky v48
+//Rebuilt in AllOfDubai v48
 //@import "pages/vcard";
 
 //Importing Dark and Color Scheme
-@import "sticky/_dark";
-@import "sticky/colors";
+@import "AllOfDubai/_dark";
+@import "AllOfDubai/colors";
 
 //Demo Aligns for Icons and Background Demo Images
 //Can be deleted to save space
@@ -64,5 +64,3 @@
 
 //Importing Plugins
 @import "plugins/splide";
-
-
