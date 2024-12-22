@@ -9,7 +9,7 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-    <title>AllOfDubai BootStrap</title>
+    <title>All Of Dubai</title>
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <link
@@ -39,33 +39,36 @@
 
     <div id="page">
       <div class="header header-fixed header-logo-center">
-        <a href="index.html" class="header-title">All Of Dubai</a>
-        <a href="#" data-back-button class="header-icon header-icon-1"
-          ><i class="fas fa-arrow-left"></i
-        ></a>
+        <a href="app.html" class="header-title">All Of Dubai</a>
+        <a href="app.html" data-back-button class="ml-1">
+          <img
+            src="./images/allofdubai_logo.png"
+            alt="logo"
+            style="height: 50px; width: 60px; margin-left: 20px" />
+        </a>
         <a href="#" data-toggle-theme class="header-icon header-icon-4"
           ><i class="fas fa-lightbulb"></i
         ></a>
       </div>
 
       <div id="footer-bar" class="footer-bar-1">
-        <a href="index.html"><i class="fa fa-home"></i><span>Home</span></a>
-        <a href="index-components.html"
-          ><i class="fa fa-star"></i><span>Features</span></a
+        <a href="app.html"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="about.html"
+          ><i class="fa fa-info-circle"></i><span>About Us</span></a
         >
-        <a href="index-pages.html" class="active-nav"
-          ><i class="fa fa-heart"></i><span>Pages</span></a
+        <a href="page-team.html" class="active-nav"
+          ><i class="fa fa-envelope"></i><span>Contact</span></a
         >
         <a href="index-search.html"
           ><i class="fa fa-search"></i><span>Search</span></a
         >
-        <a href="#" data-menu="menu-settings"
+        <a href="#menu-settings" data-menu="menu-settings"
           ><i class="fa fa-cog"></i><span>Settings</span></a
         >
       </div>
 
-      <div class="page-content header-clear-medium">
-        <div class="card card-style">
+      <div class="page-content header-clear-medium" style="margin-top: 20px">
+        <!-- <div class="card card-style">
           <div class="content">
             <h3>Team Cards</h3>
             <p>
@@ -73,28 +76,27 @@
               your company great.
             </p>
           </div>
-        </div>
+        </div> -->
 
         <div class="card card-style">
           <div class="content text-center mb-n2">
             <img
-              src="images/pictures/faces/2s.png"
+              src="./images/developer.jpeg"
               width="200"
-              class="mx-auto rounded-circle mb-n3" />
+              class="mx-auto rounded-circle mb-n3"
+              style="
+                width: 200px;
+                height: 200px;
+                border-radius: 50%; /* Makes the image circular */
+                display: block; /* To center, if needed */
+                margin: 0 auto;
+              " />
             <p class="mb-n2 font-11 badge bg-red-dark text-uppercase">
-              Lead Photographer
+              Developer Manager
             </p>
-            <h1 class="pt-2 mb-n1 font-26">John Doe</h1>
-            <p class="mb-4 font-11 opacity-50">
-              <i class="fa fa-map-marker pe-2"></i> Palo Alto, California
-            </p>
-            <p>
-              Ut molestie leo nec est venenatis, eget euismod tellus venenatis.
-              Phasellus sit amet odio augue. Pellentesque habitant morbi
-              tristique senectus et netus et malesuada fames ac turpis egestas
-            </p>
+            <h1 class="pt-2 mb-2 font-26">RWE</h1>
             <div class="text-center mb-4">
-              <a href="#" class="icon icon-xs bg-facebook rounded-xl"
+              <!-- <a href="#" class="icon icon-xs bg-facebook rounded-xl"
                 ><i class="fab fa-facebook-f"></i
               ></a>
               <a href="#" class="icon icon-m mx-2 bg-instagram rounded-xl"
@@ -102,15 +104,33 @@
               ></a>
               <a href="#" class="icon icon-xs bg-twitter rounded-xl"
                 ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#" class="pt-2 d-block color-theme opacity-30"
-                >johndoe@domain.com</a
-              >
+              ></a> -->
+              <a
+                style="
+                  text-decoration: none;
+                  color: inherit;
+                  padding: 8px 16px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 10px;
+                "
+                href="https://wa.me/971503957177?text=Hello!%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                class="whatsapp-link d-flex align-items-center"
+                target="_blank"
+                rel="noopener noreferrer">
+                <i
+                  style="font-size: 24px; color: #25d366"
+                  class="fab fa-whatsapp whatsapp-icon"></i>
+                <span style="font-size: 16px; /* Text size */ font-weight: 500"
+                  >WhatsApp: 00971503957177</span
+                >
+              </a>
             </div>
           </div>
         </div>
 
-        <div class="card card-style">
+        <!-- <div class="card card-style">
           <div class="content">
             <div class="d-flex bd-highlight mb-n2">
               <div class="p-2 flex-shrink-1">
@@ -136,60 +156,22 @@
               >CALL</a
             >
           </div>
-        </div>
+        </div> -->
 
         <div class="card card-style">
           <div class="content">
-            <div class="row mb-0">
-              <div class="col-6 text-center">
-                <img
-                  src="images/pictures/faces/3s.png"
-                  class="img-fluid rounded-m mb-n1" />
-                <div class="text-center mt-n3">
-                  <a href="#" class="icon icon-xxs bg-facebook rounded-xl"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a href="#" class="icon icon-xxs bg-instagram rounded-xl"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                  <a href="#" class="icon icon-xxs bg-twitter rounded-xl"
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                </div>
-                <h2 class="pt-2 mb-n1">John Doe</h2>
-                <p class="mb-n2 font-11 opacity-50">Lead Photographer</p>
-              </div>
-              <div class="col-6 text-center">
-                <img
-                  src="images/pictures/faces/4s.png"
-                  class="img-fluid rounded-m" />
-                <div class="text-center mt-n3">
-                  <a href="#" class="icon icon-xxs bg-whatsapp rounded-xl"
-                    ><i class="fab fa-whatsapp"></i
-                  ></a>
-                  <a href="#" class="icon icon-xxs bg-linkedin rounded-xl"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                  <a href="#" class="icon icon-xxs bg-pinterest rounded-xl"
-                    ><i class="fab fa-pinterest-p"></i
-                  ></a>
-                </div>
-                <h2 class="pt-2 mb-n1">Jack Son</h2>
-                <p class="mb-n2 font-11 opacity-50">Video Shooter</p>
-              </div>
-            </div>
+            <div id="team-container" class="row mb-0"></div>
           </div>
         </div>
 
-        <div class="card card-style">
+        <!-- <div class="card card-style">
           <div class="content">
             <div class="row mb-0 mt-3">
               <div class="col-6 pe-0">
                 <div class="text-center">
                   <img
                     class="rounded-m mb-3 preload-img"
-                    src="images/empty.png"
-                    data-src="images/pictures/faces/1s.png"
+                    src="./images/maryam.jpeg"
                     width="120" />
                   <h1 class="font-19 mb-n2">The Designer</h1>
                   <p class="mt-n2 color-highlight font-11 mb-3">
@@ -234,11 +216,11 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="footer card card-style">
           <a href="#" class="footer-title"
-            ><span class="color-highlight">AllOfDubai Dubaiubai</span></a
+            ><span class="color-highlight">All Of Dubai </span></a
           >
           <p class="footer-text">
             <span
@@ -518,5 +500,151 @@
 
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
+    <script>
+      const teamMember = [
+        {
+          name: "Fereshteh",
+          role: "Marketing",
+          image: "./images/team-image/Fereshteh.jpeg",
+          contact: "+971586773055",
+        },
+        {
+          name: "Parvaz",
+          role: "Marketing",
+          image: "./images/team-image/Parvaz.jpg",
+          contact: "00989193679772",
+        },
+        {
+          name: "Melika",
+          role: "Marketing",
+          image: "./images/team-image/Melika.jpeg",
+          contact: "+989395266267",
+        },
+        {
+          name: "Mamdouh",
+          role: "Management",
+          image: "./images/team-image/Mamdouh.jpeg",
+          contact: "00971561660424",
+        },
+        {
+          name: "Mohammad",
+          role: "Marketing",
+          image: "./images/team-image/Mohammad.jpeg",
+          contact: "00971561660424",
+        },
+        {
+          name: "Maede",
+          role: "Chinese section",
+          image: "./images/team-image/Maede.jpeg",
+          contact: "+989922956703",
+        },
+        {
+          name: "Parvin",
+          role: "Marketing",
+          image: "./images/team-image/Parvin.jpeg",
+          contact: "00971561660424",
+        },
+        {
+          name: "Jamileh",
+          role: "Marketing",
+          image: "./images/team-image/Jamileh.jpeg",
+          contact: "00971561660424",
+        },
+        {
+          name: "Tony",
+          role: "Team Work",
+          image: "./images/team-image/Tony.jpeg",
+          contact: "00971561660424",
+        },
+        {
+          name: "Schon",
+          role: "Team Work",
+          image: "./images/team-image/Schon.jpeg",
+          contact: "00971561660424",
+        },
+        {
+          name: "Amir",
+          role: "Team Work",
+          image: "./images/team-image/Amir.jpeg",
+          contact: "00971561660424",
+        },
+        {
+          name: "Janet",
+          role: "Team Work",
+          image: "./images/team-image/Janet.jpeg",
+          contact: "00971561660424",
+        },
+        {
+          name: "Sebastian",
+          role: "Team Work",
+          image: "./images/team-image/Sebastian.jpeg",
+          contact: "00971561660424",
+        },
+        {
+          name: "MohammadReza",
+          role: "Team Work",
+          image: "./images/team-image/MohammadReza.jpeg",
+          contact: "00971561660424",
+        },
+        {
+          name: "Anil",
+          role: "Team Work",
+          image: "./images/team-image/Janet.jpeg",
+          contact: "00971561660424",
+        },
+      ];
+
+      const teamContainer = document.getElementById("team-container");
+
+      teamMember.forEach((member) => {
+        const formattedWhatsAppLink = `https://wa.me/${member.contact.replace(
+          /[^0-9]/g,
+          ""
+        )}?text=Hello!%20I%20would%20like%20to%20inquire%20about%20your%20services.`;
+
+        const memberHtml = `
+      <div class="col-6 text-center">
+        <img
+          src="${member.image}"
+          class="img-fluid rounded-m mb-n1"
+        />
+        <div class="text-center mt-n3">
+          <a
+            href="${formattedWhatsAppLink}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon icon-xxs bg-whatsapp rounded-xl"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+        <h2 class="pt-2 mb-n1">${member.name}</h2>
+        <p class="mb-n2 font-11 opacity-50">${member.role}</p>
+        <a
+          style="
+            text-decoration: none;
+            color: inherit;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+          "
+          href="${formattedWhatsAppLink}"
+          class="whatsapp-link d-flex align-items-center"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i
+            style="font-size: 24px; color: #25d366"
+            class="fab fa-whatsapp whatsapp-icon"
+          ></i>
+          <span style="font-size: 16px; font-weight: 500">${member.contact}</span>
+        </a>
+      </div>
+    `;
+        teamContainer.innerHTML += memberHtml;
+      });
+    </script>
   </body>
 </html>

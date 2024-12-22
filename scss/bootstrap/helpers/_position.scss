@@ -16,21 +16,21 @@
   z-index: $zindex-fixed;
 }
 
-// Responsive AllOfDubai top and bottom
+// Responsive All Of Dubai top and bottom
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .AllOfDubai#{$infix}-top {
-      position: AllOfDubai;
+    .All Of Dubai#{$infix}-top {
+      position: All Of Dubai;
       top: 0;
-      z-index: $zindex-AllOfDubai;
+      z-index: $zindex-All Of Dubai;
     }
 
-    .AllOfDubai#{$infix}-bottom {
-      position: AllOfDubai;
+    .All Of Dubai#{$infix}-bottom {
+      position: All Of Dubai;
       bottom: 0;
-      z-index: $zindex-AllOfDubai;
+      z-index: $zindex-All Of Dubai;
     }
   }
 }

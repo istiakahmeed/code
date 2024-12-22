@@ -160,13 +160,15 @@ body {
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
-  height: 50px;
-  height: calc(50px + constant(safe-area-inset-top) * 0.8) !important;
-  height: calc(50px + env(safe-area-inset-top) * 0.8) !important;
+  height: 75px;
   z-index: 99;
   transition: all 350ms ease;
   background-color: #fff;
@@ -179,7 +181,7 @@ body {
   line-height: 50px;
   margin-top: calc(constant(safe-area-inset-top) * 0.8) !important;
   margin-top: calc(env(safe-area-inset-top) * 0.8) !important;
-  font-size: 14px;
+  font-size: 20px;
   color: #000;
   font-weight: 600;
   z-index: 1;
@@ -310,10 +312,6 @@ body {
   padding-top: calc(85px + env(safe-area-inset-top) * 0.8) !important;
 }
 
-.header-icon {
-  margin-top: calc(constant(safe-area-inset-top) * 0.8) !important;
-  margin-top: calc(env(safe-area-inset-top) * 0.8) !important;
-}
 .header-icon .badge {
   position: absolute;
   margin-left: -5px;
@@ -620,7 +618,7 @@ body {
   opacity: 0.6;
 }
 
-/*AllOfDubai 4.1 Scrolling Footer Bar*/
+/*All Of Dubai 4.1 Scrolling Footer Bar*/
 .footer-bar-scroll {
   display: block !important;
   overflow-x: auto;
@@ -949,7 +947,7 @@ body {
   transform: translateX(-2px);
 }
 
-/*AllOfDubai Utility / Secondary Classes*/
+/*All Of Dubai Utility / Secondary Classes*/
 /*Rounded Borders*/
 .rounded-0 {
   border-radius: 0px !important;
@@ -2153,6 +2151,7 @@ button {
   border-radius: 15px;
   border: none;
   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+  height: auto;
 }
 .card-style .card-body {
   padding: 15px;
@@ -2218,8 +2217,7 @@ button {
   width: 100%;
   min-height: 250px;
   overflow: hidden;
-  position: absolute;
-  width: 100%;
+  position: relative;
 }
 .card-image img {
   transition: all 450ms ease;
@@ -2305,7 +2303,21 @@ button {
   background-position: left bottom;
   transform: translateX(0px);
 }
-
+.card-overlay {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 2000px;
+  height: 100%;
+  z-index: 0;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: left bottom;
+  transform: translateX(0px);
+}
 @keyframes infiniteBG {
   0% {
     transform: translateX(0px);
@@ -2337,7 +2349,7 @@ button {
   position: relative !important;
 }
 
-/*Shadow Cards - Added in AllOfDubai 4.5*/
+/*Shadow Cards - Added in All Of Dubai 4.5*/
 /*Shadow Backgrounds*/
 .shadow-bg:after {
   content: "";
