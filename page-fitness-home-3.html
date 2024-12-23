@@ -5,52 +5,48 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+      content="black-translucent" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
-    />
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <title>All Of Dubai</title>
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link
       rel="stylesheet"
       type="text/css"
-      href="fonts/css/fontawesome-all.min.css"
-    />
+      href="fonts/css/fontawesome-all.min.css" />
     <link
       rel="manifest"
       href="_manifest.json"
-      data-pwa-version="set_in_manifest_and_pwa_js"
-    />
+      data-pwa-version="set_in_manifest_and_pwa_js" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="app/icons/icon-192x192.png"
-    />
+      href="app/icons/icon-192x192.png" />
   </head>
 
   <body
     class="theme-light"
     data-highlight="highlight-red"
-    data-gradient="body-default"
-  >
+    data-gradient="body-default">
     <div id="preloader">
       <div class="spinner-border color-highlight" role="status"></div>
     </div>
 
     <div id="page">
-      <div class="header header-fixed header-logo-center header-auto-show">
-        <a href="index.html" class="header-title">All Of Dubai</a>
-        <a href="#" data-back-button class="header-icon header-icon-1"
-          ><i class="fas fa-arrow-left"></i
-        ></a>
-        <a href="#" data-toggle-theme class="header-icon header-icon-4"
+      <div class="header header-fixed header-logo-center">
+        <a href="app.html" class="header-title">All Of Dubai</a>
+        <a href="app.html" data-back-button class="ml-1">
+          <img
+            src="./images/allofdubai_logo.png"
+            alt="logo"
+            style="width: 68px" />
+        </a>
+        <a href="#" data-toggle-theme style="color: #000; font-size: 24px"
           ><i class="fas fa-lightbulb"></i
         ></a>
       </div>
@@ -59,10 +55,10 @@
         <a href="app.html" class="active-nav"
           ><i class="fa fa-home"></i><span>Home</span></a
         >
-        <a href="page-about.html"
+        <a href="about.html"
           ><i class="fa fa-info-circle"></i><span>About Us</span></a
         >
-        <a href="page-contact.html"
+        <a href="page-team.html"
           ><i class="fa fa-envelope"></i><span>Contact</span></a
         >
         <a href="index-search.html"
@@ -95,8 +91,7 @@
               type="text"
               class="border-0"
               placeholder="Search for Exercises... (try cardio)"
-              data-search
-            />
+              data-search />
             <a href="#" class="clear-search disabled mt-0"
               ><i class="fa fa-times color-red-dark"></i
             ></a>
@@ -107,15 +102,13 @@
                 href="#"
                 class="d-flex py-2"
                 data-filter-item
-                data-filter-name="all hiit cardio jump leg burpee"
-              >
+                data-filter-name="all hiit cardio jump leg burpee">
                 <div>
                   <img
                     src="images/fitness/6t.jpg"
                     class="rounded-sm me-3"
                     width="50"
-                    alt="img"
-                  />
+                    alt="img" />
                 </div>
                 <div>
                   <span
@@ -135,15 +128,13 @@
                 href="#"
                 class="d-flex py-2"
                 data-filter-item
-                data-filter-name="all jump rope dance leg burpee cardio"
-              >
+                data-filter-name="all jump rope dance leg burpee cardio">
                 <div>
                   <img
                     src="images/fitness/7t.jpg"
                     class="rounded-sm me-3"
                     width="50"
-                    alt="img"
-                  />
+                    alt="img" />
                 </div>
                 <div>
                   <span
@@ -163,15 +154,13 @@
                 href="#"
                 class="d-flex py-2"
                 data-filter-item
-                data-filter-name="all run sprint jog marathon"
-              >
+                data-filter-name="all run sprint jog marathon">
                 <div>
                   <img
                     src="images/fitness/5t.jpg"
                     class="rounded-sm me-3"
                     width="50"
-                    alt="img"
-                  />
+                    alt="img" />
                 </div>
                 <div>
                   <span
@@ -191,15 +180,13 @@
                 href="#"
                 class="d-flex py-2"
                 data-filter-item
-                data-filter-name="all weights lift mixed circuit"
-              >
+                data-filter-name="all weights lift mixed circuit">
                 <div>
                   <img
                     src="images/fitness/1t.jpg"
                     class="rounded-sm me-3"
                     width="50"
-                    alt="img"
-                  />
+                    alt="img" />
                 </div>
                 <div>
                   <span
@@ -219,15 +206,13 @@
                 href="#"
                 class="d-flex py-2"
                 data-filter-item
-                data-filter-name="all sauna heat"
-              >
+                data-filter-name="all sauna heat">
                 <div>
                   <img
                     src="images/fitness/10t.jpg"
                     class="rounded-sm me-3"
                     width="50"
-                    alt="img"
-                  />
+                    alt="img" />
                 </div>
                 <div>
                   <span
@@ -267,8 +252,7 @@
                 class="no-effect font-15 font-600 py-2 border-0"
                 data-active
                 data-bs-toggle="collapse"
-                data-bs-target="#tab-1"
-              >
+                data-bs-target="#tab-1">
                 <span class="d-block font-30 pt-2"
                   ><i class="fa fa-running"></i
                 ></span>
@@ -279,8 +263,7 @@
                 href="#"
                 class="no-effect font-15 font-600 py-2 border-0"
                 data-bs-toggle="collapse"
-                data-bs-target="#tab-2"
-              >
+                data-bs-target="#tab-2">
                 <span class="d-block font-30 pt-2"
                   ><i class="fa fa-dumbbell"></i
                 ></span>
@@ -291,8 +274,7 @@
                 href="#"
                 class="no-effect font-15 font-600 py-2 border-0"
                 data-bs-toggle="collapse"
-                data-bs-target="#tab-3"
-              >
+                data-bs-target="#tab-3">
                 <span class="d-block font-30 pt-2"
                   ><i class="fa fa-swimmer"></i
                 ></span>
@@ -305,14 +287,12 @@
           <div
             data-bs-parent="#tab-group-listing"
             class="collapse show"
-            id="tab-1"
-          >
+            id="tab-1">
             <div class="card card-style mx-0">
               <div
                 class="card card-style mx-2 mt-2"
                 data-card-height="170"
-                style="background-image: url('images/fitness/8m.jpg')"
-              >
+                style="background-image: url('images/fitness/8m.jpg')">
                 <div class="card-top p-3">
                   <div class="float-start">
                     <span class="bg-theme color-theme px-2 py-2 rounded-sm">
@@ -365,8 +345,7 @@
               <div
                 class="card card-style mx-2 mt-2"
                 data-card-height="170"
-                style="background-image: url('images/fitness/5m.jpg')"
-              >
+                style="background-image: url('images/fitness/5m.jpg')">
                 <div class="card-top p-3">
                   <div class="float-start">
                     <span class="bg-theme color-theme px-2 py-2 rounded-sm">
@@ -425,8 +404,9 @@
                     <div
                       class="card card-style m-0"
                       data-card-height="110"
-                      style="background-image: url('images/fitness/13t.jpg')"
-                    ></div>
+                      style="
+                        background-image: url('images/fitness/13t.jpg');
+                      "></div>
                   </div>
                   <div class="ms-auto w-100">
                     <h5 class="font-600 font-16 line-height-sm pt-1">
@@ -447,8 +427,9 @@
                     <div
                       class="card card-style m-0"
                       data-card-height="110"
-                      style="background-image: url('images/fitness/12t.jpg')"
-                    ></div>
+                      style="
+                        background-image: url('images/fitness/12t.jpg');
+                      "></div>
                   </div>
                   <div class="ms-auto w-100">
                     <h5 class="font-600 font-16 line-height-sm pt-1">
@@ -470,8 +451,9 @@
                     <div
                       class="card card-style m-0"
                       data-card-height="110"
-                      style="background-image: url('images/fitness/14t.jpg')"
-                    ></div>
+                      style="
+                        background-image: url('images/fitness/14t.jpg');
+                      "></div>
                   </div>
                   <div class="ms-auto w-100">
                     <h5 class="font-600 font-16 line-height-sm pt-1">
@@ -493,8 +475,9 @@
                     <div
                       class="card card-style m-0"
                       data-card-height="110"
-                      style="background-image: url('images/fitness/16t.jpg')"
-                    ></div>
+                      style="
+                        background-image: url('images/fitness/16t.jpg');
+                      "></div>
                   </div>
                   <div class="ms-auto w-100">
                     <h5 class="font-600 font-16 line-height-sm pt-1">
@@ -522,8 +505,7 @@
                     <div
                       class="card card-style m-0"
                       data-card-height="140"
-                      style="background-image: url('images/fitness/5t.jpg')"
-                    >
+                      style="background-image: url('images/fitness/5t.jpg')">
                       <div class="card-top p-2">
                         <span
                           class="bg-yellow-light color-white p-2 py-1 rounded-sm font-12 font-400"
@@ -540,8 +522,7 @@
                     <div
                       class="card card-style m-0 bg-28"
                       data-card-height="140"
-                      style="background-image: url('images/fitness/4t.jpg')"
-                    >
+                      style="background-image: url('images/fitness/4t.jpg')">
                       <div class="card-top p-2">
                         <span
                           class="bg-red-dark p-2 py-1 rounded-sm font-12 font-400"
@@ -563,8 +544,7 @@
                     <div
                       class="card card-style m-0"
                       data-card-height="140"
-                      style="background-image: url('images/fitness/11t.jpg')"
-                    >
+                      style="background-image: url('images/fitness/11t.jpg')">
                       <div class="card-top p-2">
                         <span
                           class="bg-gray-light color-black p-2 py-1 rounded-sm font-12 font-400"
@@ -581,8 +561,7 @@
                     <div
                       class="card card-style m-0 bg-28"
                       data-card-height="140"
-                      style="background-image: url('images/fitness/10t.jpg')"
-                    >
+                      style="background-image: url('images/fitness/10t.jpg')">
                       <div class="card-top p-2">
                         <span
                           class="bg-teal-dark p-2 py-1 rounded-sm font-12 font-400"
@@ -617,23 +596,19 @@
               href="#"
               data-toggle-theme
               data-trigger-switch="switch-dark-mode"
-              class="pb-2 ms-n1"
-            >
+              class="pb-2 ms-n1">
               <i
-                class="fa font-12 fa-moon rounded-s bg-highlight color-white me-3"
-              ></i>
+                class="fa font-12 fa-moon rounded-s bg-highlight color-white me-3"></i>
               <span>Dark Mode</span>
               <div class="custom-control scale-switch ios-switch">
                 <input
                   data-toggle-theme
                   type="checkbox"
                   class="ios-input"
-                  id="switch-dark-mode"
-                />
+                  id="switch-dark-mode" />
                 <label
                   class="custom-control-label"
-                  for="switch-dark-mode"
-                ></label>
+                  for="switch-dark-mode"></label>
               </div>
               <i class="fa fa-angle-right"></i>
             </a>
