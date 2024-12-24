@@ -29,6 +29,12 @@
       sizes="180x180"
       href="app/icons/icon-192x192.png" />
   </head>
+  <style>
+    .card img {
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 
   <body
     class="theme-light"
@@ -39,313 +45,47 @@
     </div>
 
     <div id="page">
+      <div class="header header-fixed header-logo-center">
+        <a href="persian.html" class="header-title">All Of Dubai</a>
+        <a href="persian.html" data-back-button class="ml-1">
+          <img
+            src="./images/allofdubai_logo.png"
+            alt="logo"
+            style="width: 68px" />
+        </a>
+        <a href="#" data-toggle-theme style="color: #000; font-size: 24px"
+          ><i class="fas fa-lightbulb"></i
+        ></a>
+      </div>
+
       <div id="footer-bar" class="footer-bar-1">
-        <a href="arabic.html"><i class="fa fa-home"></i><span>Home</span></a>
-        <a href="about-arabic.html"
-          ><i class="fa fa-info-circle"></i><span>About Us</span></a
+        <a href="persian.html"><i class="fa fa-home"></i><span>خانه</span></a>
+        <a href="about-persian.html"
+          ><i class="fa fa-info-circle"></i><span>درباره ما</span></a
         >
-        <a href=" arabic-team-page.html"
-          ><i class="fa fa-envelope"></i><span>Contact</span></a
+        <a href=" persian-team-page.html"
+          ><i class="fa fa-envelope"></i><span>تماس باما</span></a
         >
-        <a href="arabic-search.html"
-          ><i class="fa fa-search"></i><span>Search</span></a
+        <a href="persian-search.html"
+          ><i class="fa fa-search"></i><span>جستجو</span></a
         >
         <a href="#" data-menu="menu-settings"
-          ><i class="fa fa-cog"></i><span>Settings</span></a
+          ><i class="fa fa-cog"></i><span>تنظیمات</span></a
         >
       </div>
 
-      <div class="page-content header-clear-small">
-        <div
-          class="card card-style preload-img"
-          data-src="images/pictures/18.jpg"
-          data-card-height="130">
-          <div class="card-center ms-3">
-            <h1 class="color-white mb-0">Search</h1>
-            <p class="color-white mt-n1 mb-0">
-              It's a functional search system.
-            </p>
-          </div>
-          <div class="card-center me-3">
-            <a
-              href="#"
-              data-back-button
-              class="btn btn-m float-end rounded-xl shadow-xl text-uppercase font-800 bg-highlight"
-              >Back Home</a
-            >
-          </div>
-          <div class="card-overlay bg-black opacity-80"></div>
-        </div>
-
-        <div class="search-page">
-          <div class="search-box search-header bg-theme card-style me-3 ms-3">
-            <i class="fa fa-search"></i>
-            <input
-              type="text"
-              class="border-0"
-              placeholder="What are you looking for? "
-              data-search />
-            <a href="#" class="clear-search disabled mt-0"
-              ><i class="fa fa-times color-red-dark"></i
-            ></a>
-          </div>
-
-          <div
-            class="search-results disabled-search-list card card-style shadow-l">
-            <div class="content">
-              <div
-                data-filter-item
-                data-filter-name="all products eazy mobile"
-                class="search-result-list">
-                <img
-                  class="shadow-l preload-img"
-                  src="images/empty.png"
-                  data-src="images/pictures/32s.jpg"
-                  alt="img" />
-                <h1>Eazy | Mobile Website</h1>
-                <p>
-                  Eazy Mobile, a best seller and trending item, loved by all.
-                </p>
-                <a href="#" class="bg-highlight">VIEW</a>
-              </div>
-
-              <div
-                data-filter-item
-                data-filter-name="all products eazy mobile"
-                class="search-result-list">
-                <img
-                  class="shadow-l preload-img"
-                  src="images/empty.png"
-                  data-src="images/pictures/29s.jpg"
-                  alt="img" />
-                <h1>Eazy | Cordova App</h1>
-                <p>
-                  Eazy is also available as <br />
-                  a Cordova & PhoneGap App.
-                </p>
-                <a href="#" class="bg-highlight">VIEW</a>
-              </div>
-
-              <div
-                data-filter-item
-                data-filter-name="all products mega mobile"
-                class="search-result-list">
-                <img
-                  class="shadow-l preload-img"
-                  src="images/empty.png"
-                  data-src="images/pictures/27s.jpg"
-                  alt="img" />
-                <h1>Mega | Mobile Website</h1>
-                <p>Mega Powerful, Mega Feature Filled, Easy to Use.</p>
-                <a href="#" class="bg-highlight">VIEW</a>
-              </div>
-
-              <div
-                data-filter-item
-                data-filter-name="all products mega mobile"
-                class="search-result-list">
-                <img
-                  class="shadow-l preload-img"
-                  src="images/empty.png"
-                  data-src="images/pictures/28s.jpg"
-                  alt="img" />
-                <h1>Mega | Cordova App</h1>
-                <p>
-                  Mega is also available as <br />
-                  a Cordova & PhoneGap App.
-                </p>
-                <a href="#" class="bg-highlight">VIEW</a>
-              </div>
-
-              <div
-                data-filter-item
-                data-filter-name="all products ultra mobile"
-                class="search-result-list">
-                <img
-                  class="shadow-l preload-img"
-                  src="images/empty.png"
-                  data-src="images/pictures/26s.jpg"
-                  alt="img" />
-                <h1>Ultra | Mobile Website</h1>
-                <p>
-                  Ultra Powerful and Fast Mobile Website, an absolute best
-                  seller.
-                </p>
-                <a href="#" class="bg-highlight">VIEW</a>
-              </div>
-
-              <div
-                data-filter-item
-                data-filter-name="all products ultra mobile"
-                class="search-result-list">
-                <img
-                  class="shadow-l preload-img"
-                  src="images/empty.png"
-                  data-src="images/pictures/25s.jpg"
-                  alt="img" />
-                <h1>Ultra | Cordova App</h1>
-                <p>
-                  Ultra is also available as <br />
-                  a Cordova & PhoneGap App.
-                </p>
-                <a href="#" class="bg-highlight">VIEW</a>
-              </div>
-
-              <div
-                data-filter-item
-                data-filter-name="all products kolor mobile"
-                class="search-result-list">
-                <img
-                  class="shadow-l preload-img"
-                  src="images/empty.png"
-                  data-src="images/pictures/24s.jpg"
-                  alt="img" />
-                <h1>Kolor | Mobile Website</h1>
-                <p>
-                  Kolor is creative, beautiful, and offers beautiful colors.
-                </p>
-                <a href="#" class="bg-highlight">VIEW</a>
-              </div>
-
-              <div
-                data-filter-item
-                data-filter-name="all products kolor mobile"
-                class="search-result-list">
-                <img
-                  class="shadow-l preload-img"
-                  src="images/empty.png"
-                  data-src="images/pictures/23s.jpg"
-                  alt="img" />
-                <h1>Kolor | Cordova App</h1>
-                <p>
-                  Kolor is also available as <br />
-                  a Cordova & PhoneGap App.
-                </p>
-                <a href="#" class="bg-highlight">VIEW</a>
-              </div>
-
-              <div
-                data-filter-item
-                data-filter-name="all products vinga mobile"
-                class="search-result-list">
-                <img
-                  class="shadow-l preload-img"
-                  src="images/empty.png"
-                  data-src="images/pictures/22s.jpg"
-                  alt="img" />
-                <h1>Vinga | Mobile Website</h1>
-                <p>Simplicity and Elegance at it's best. Vinga is very fast.</p>
-                <a href="#" class="bg-highlight">VIEW</a>
-              </div>
-
-              <div
-                data-filter-item
-                data-filter-name="all products vinga mobile"
-                class="search-result-list">
-                <img
-                  class="shadow-l preload-img"
-                  src="images/empty.png"
-                  data-src="images/pictures/21s.jpg"
-                  alt="img" />
-                <h1>Vinga | Cordova App</h1>
-                <p>
-                  Vinga is also available as <br />
-                  a Cordova & PhoneGap App.
-                </p>
-                <a href="#" class="bg-highlight">VIEW</a>
-              </div>
-              <div class="search-no-results disabled">
-                <h3 class="bold top-10">Nothing found...</h3>
-                <span class="under-heading font-11 opacity-70 color-theme"
-                  >There's nothing matching the description you're looking for,
-                  try a different keyword.</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="search-trending card card-style">
-            <div class="content mb-2">
-              <h3>Trending Searches</h3>
-              <p class="font-11 mt-n2">What others are Searching for.</p>
-            </div>
-            <div class="list-group list-custom-small me-3 ms-3">
-              <a href="#">
-                <span class="font-400 color-blue-dark">All Products</span>
-                <i class="color-gray-dark fa fa-angle-right"></i>
-              </a>
-              <a href="#">
-                <span class="font-400 color-blue-dark">Eazy Mobile</span>
-                <i class="color-gray-dark fa fa-angle-right"></i>
-              </a>
-              <a href="#">
-                <span class="font-400 color-blue-dark">Mega Mobile</span>
-                <i class="color-gray-dark fa fa-angle-right"></i>
-              </a>
-              <a href="#">
-                <span class="font-400 color-blue-dark">Ultra Mobile</span>
-                <i class="color-gray-dark fa fa-angle-right"></i>
-              </a>
-              <a href="#">
-                <span class="font-400 color-blue-dark">Kolor Mobile</span>
-                <i class="color-gray-dark fa fa-angle-right"></i>
-              </a>
-              <a href="#" class="border-0">
-                <span class="font-400 color-blue-dark">Vinga Mobile</span>
-                <i class="color-gray-dark fa fa-angle-right"></i>
-              </a>
-            </div>
-          </div> -->
-        </div>
-
-        <!-- <div class="footer card card-style">
-          <a href="#" class="footer-title"
-            ><span class="color-highlight">All Of Dubai </span></a
-          >
-          <p class="footer-text">
-            <span
-              >Made with
-              <i class="fa fa-heart color-highlight font-16 ps-2 pe-2"></i> by
-              Enabled</span
-            ><br /><br />Powered by the best Mobile Website Developer on Envato
-            Market. Elite Quality. Elite Products.
-          </p>
-          <div class="text-center mb-3">
-            <a
-              href="#"
-              class="icon icon-xs rounded-sm shadow-l me-1 bg-facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#" class="icon icon-xs rounded-sm shadow-l me-1 bg-twitter"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="#" class="icon icon-xs rounded-sm shadow-l me-1 bg-phone"
-              ><i class="fa fa-phone"></i
-            ></a>
-            <a
-              href="#"
-              data-menu="menu-share"
-              class="icon icon-xs rounded-sm me-1 shadow-l bg-red-dark"
-              ><i class="fa fa-share-alt"></i
-            ></a>
-            <a
-              href="#"
-              class="back-to-top icon icon-xs rounded-sm shadow-l bg-dark-light"
-              ><i class="fa fa-angle-up"></i
-            ></a>
-          </div>
-          <p class="footer-copyright">
-            Copyright &copy; Enabled <span id="copyright-year">2017</span>. All
-            Rights Reserved.
-          </p>
-          <p class="footer-links">
-            <a href="#" class="color-highlight">Privacy Policy</a> |
-            <a href="#" class="color-highlight">Terms and Conditions</a> |
-            <a href="#" class="back-to-top color-highlight"> Back to Top</a>
-          </p>
-          <div class="clear"></div>
-        </div> -->
+      <div
+        class="page-content header-clear-medium"
+        style="margin-top: 15px; padding-left: 20px; padding-right: 20px">
+        <a
+          href="https://wa.me/+971562226242?text=Hello!%20I%20would%20like%20to%20inquire%20about%20your%20services.">
+          <img
+            src="./images/realstate.png"
+            alt="realstate"
+            style="width: 100%; max-width: 600px; height: auto" />
+        </a>
       </div>
+
       <!-- End of Page Content-->
       <!-- All Menus, Action Sheets, Modals, Notifications, Toasts, Snackbars get Placed outside the <div class="page-content"> -->
       <div id="menu-settings" class="menu menu-box-bottom menu-box-detached">
