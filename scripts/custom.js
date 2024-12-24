@@ -1879,12 +1879,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         //Setting Timeout Before Prompt Shows Again if Dismissed
-        var hours = pwaRemind * 24; // Reset when storage is more than 24hours
+        var hours = pwaRemind * 1; // Reset when storage is more than 24hours
         var now = Date.now();
         var setupTime = localStorage.getItem(pwaName + "-PWA-Timeout-Value");
         if (setupTime == null) {
           localStorage.setItem(pwaName + "-PWA-Timeout-Value", now);
-        } else if (now - setupTime > hours * 60 * 60 * 1000) {
+        } else if (now - setupTime > hours * 1000) {
           localStorage.removeItem(pwaName + "-PWA-Prompt");
           localStorage.setItem(pwaName + "-PWA-Timeout-Value", now);
         }
