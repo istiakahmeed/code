@@ -5,34 +5,28 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+      content="black-translucent" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
-    />
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <title>All Of Dubai</title>
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link
       rel="stylesheet"
       type="text/css"
-      href="fonts/css/fontawesome-all.min.css"
-    />
+      href="fonts/css/fontawesome-all.min.css" />
     <link
       rel="manifest"
       href="_manifest.json"
-      data-pwa-version="set_in_manifest_and_pwa_js"
-    />
+      data-pwa-version="set_in_manifest_and_pwa_js" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="app/icons/icon-192x192.png"
-    />
+      href="app/icons/icon-192x192.png" />
   </head>
   <style>
     .welcomeBanner {
@@ -62,8 +56,7 @@
   <body
     class="theme-light"
     data-highlight="highlight-red"
-    data-gradient="body-default"
-  >
+    data-gradient="body-default">
     <div id="preloader">
       <div class="spinner-border color-highlight" role="status"></div>
     </div>
@@ -75,8 +68,7 @@
           <img
             src="./images/allofdubai_logo.png"
             alt="logo"
-            style="width: 68px"
-          />
+            style="width: 68px" />
         </a>
         <a href="#" data-toggle-theme style="color: #000; font-size: 24px"
           ><i class="fas fa-lightbulb"></i
@@ -84,23 +76,356 @@
       </div>
 
       <div id="footer-bar" class="footer-bar-1">
-        <a href="app.html"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="app.html"><i class="fa fa-home"></i><span>بيت</span></a>
         <a href="about-arabic.html"
-          ><i class="fa fa-info-circle"></i><span>About Us</span></a
+          ><i class="fa fa-info-circle"></i><span>معلومات عنا</span></a
         >
         <a href=" arabic-team-page.html"
-          ><i class="fa fa-envelope"></i><span>Contact</span></a
+          ><i class="fa fa-envelope"></i><span>اتصل بنا</span></a
         >
         <a href="index-search.html"
-          ><i class="fa fa-search"></i><span>Search</span></a
+          ><i class="fa fa-search"></i><span>يبحث</span></a
         >
         <a href="#" data-menu="menu-settings"
-          ><i class="fa fa-cog"></i><span>Settings</span></a
+          ><i class="fa fa-cog"></i><span>إعدادات</span></a
         >
       </div>
 
-      <div class="welcomeBanner">
-        <img src="images/welcomearabic-1.png" alt="welcome" />
+      <!-- iOS 15 Fix-->
+      <style>
+        #single-slider-cover .splide__pagination {
+          padding-bottom: 50px;
+        }
+      </style>
+
+      <div class="page-content header-clear pb-0" style="margin-top: 75px">
+        <div
+          class="splide single-slider slider-no-arrows slider-cover-dots mt-n5"
+          id="single-slider-cover">
+          <div class="splide__track">
+            <div class="splide__list">
+              <div class="splide__slide">
+                <div
+                  data-card-height="cover"
+                  class="card"
+                  style="background-image: url(images/pictures/14t.jpg)">
+                  <div class="card-center text-center">
+                    <h1 class="mb-5">
+                      <i class="fa fa-4x fa-star color-yellow-dark"></i>
+                    </h1>
+                    <h1 class="color-white bolder fa-3x">
+                      تم البناء بواسطة Enabled
+                    </h1>
+                    <h6 class="color-white mb-4">
+                      أفضل مؤلف للجوال على Envato
+                    </h6>
+
+                    <p class="boxed-text-l color-white opacity-80 mb-5">
+                      مع أكثر من 10 سنوات من الخبرة في عالم الهاتف المحمول،
+                      فإننا نقدم لعملائنا كل ما لدينا.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn btn-m bg-highlight rounded-xl btn-center-m shadow-l font-900 text-uppercase"
+                      >مذهل</a
+                    >
+                  </div>
+                  <div class="card-overlay bg-black opacity-70"></div>
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div
+                  data-card-height="cover"
+                  class="card"
+                  style="background-image: url(images/pictures/25t.jpg)">
+                  <div class="card-center text-center">
+                    <h1 class="color-white bolder fa-3x">تعليقات روك</h1>
+                    <div class="divider-small mt-4 mb-4 bg-highlight"></div>
+                    <p class="boxed-text-l color-white opacity-80 mb-4">
+                      إمكانيات لا حدود لها. قم بتبديل غلافك ليعكس أسلوبك
+                      وتصميمك. إنه مرن بشكل لا يصدق.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn btn-s bg-highlight rounded-l btn-center-m shadow-l text-uppercase font-900"
+                      >مذهل</a
+                    >
+                  </div>
+                  <div class="card-overlay bg-black opacity-80"></div>
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div
+                  data-card-height="cover"
+                  class="card"
+                  style="background-image: url(images/pictures/18t.jpg)">
+                  <div class="card-center text-center">
+                    <h1 class="color-white bolder fa-3x mb-2">غطاء منزلق</h1>
+                    <p class="boxed-text-l color-white opacity-80">
+                      إمكانيات لا حدود لها. قم بتبديل غلافك ليعكس أسلوبك
+                      وتصميمك. إنه مرن بشكل لا يصدق.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn btn-s bg-highlight rounded-s btn-center-m shadow-l text-uppercase font-900"
+                      >مذهل</a
+                    >
+                  </div>
+                  <div class="card-overlay bg-black opacity-80"></div>
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div
+                  data-card-height="cover"
+                  class="card"
+                  style="background-image: url(images/pictures/29t.jpg)">
+                  <div class="card-center ms-3 text-center">
+                    <h1 class="color-white bolder fa-4x mb-4">يجد</h1>
+                    <h1 class="color-white bolder fa-5x mb-4">لك</h1>
+                    <h1 class="color-white bolder fa-4x mb-4">أسلوب</h1>
+                    <p class="me-5 text-center color-white opacity-90">
+                      إمكانيات لا حدود لها. قم بتبديل غلافك ليعكس أسلوبك
+                      وتصميمك. إنه مرن بشكل لا يصدق.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn btn-s bg-highlight rounded-s btn-center-m shadow-l text-uppercase font-900"
+                      >مذهل</a
+                    >
+                  </div>
+                  <div class="card-overlay bg-black opacity-80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content" style="margin-top: 24px; margin-bottom: 70px">
+        <div class="row mb-0">
+          <!-- First Set-->
+          <div class="col-5">
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-content-home-2.html"
+              style="
+                background-image: url(./images/gallery-image/beauty-salon.png);
+                height: 130px;
+              ">
+              <div class="card-bottom">
+                <h2 class="color-white text-center mb-n1 pb-3">صالون تجميل</h2>
+              </div>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-listing-auto-detailed-2.html"
+              style="
+                background-image: url(./images/gallery-image/car-service.png);
+                height: 130px;
+              ">
+              <div class="card-bottom">
+                <h2 class="color-white text-center mb-n1 pb-3">
+                  خدمة السيارات
+                </h2>
+              </div>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+          </div>
+          <div class="col-7 ps-0">
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-content-home-2.html"
+              style="
+                background-image: url(./images/gallery-image/entertaiment.png);
+                height: 270px;
+              ">
+              <div class="card-bottom">
+                <h2 class="color-white text-center mb-n1 pb-3">ترفيه</h2>
+              </div>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+          </div>
+
+          <!-- Second Set-->
+          <div class="col-6 pe-0">
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-fitness-home-3.html"
+              style="
+                background-image: url(./images/gallery-image/fitness.png);
+                height: 300px;
+              ">
+              <div class="card-bottom">
+                <h3 class="color-white text-center mb-n1 pb-3">لياقة بدنية</h3>
+              </div>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+          </div>
+          <div class="col-6">
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-health-actions.html"
+              style="
+                background-image: url(./images/gallery-image/helth.png);
+                height: 95px;
+              ">
+              <div class="card-bottom">
+                <h2 class="color-white text-center mb-n1 pb-3">صحة</h2>
+              </div>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-content-home-2.html"
+              style="
+                background-image: url(./images/gallery-image/import&export.png);
+                height: 95px;
+              ">
+              <div class="card-bottom">
+                <h2 class="color-white text-center mb-n1 pb-3">
+                  استيراد التصدير
+                </h2>
+              </div>
+              <div class="card-overlay bg-gradient"></div
+            ></a>
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-content-home-2.html"
+              style="
+                background-image: url(./images/gallery-image/jobs.jpg);
+                height: 95px;
+              ">
+              <div class="card-bottom">
+                <h2 class="color-white text-center mb-n1 pb-3">وظائف</h2>
+              </div>
+              <div class="card-overlay bg-gradient"></div
+            ></a>
+          </div>
+
+          <!-- Third Set-->
+          <div class="col-4">
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-content-home-2.html"
+              style="
+                background-image: url(./images/gallery-image/nessages.png);
+                height: 95px;
+              ">
+              <div class="card-bottom">
+                <h2 class="color-white text-center mb-n1 pb-3">تدليك</h2>
+              </div>
+              <div class="card-overlay bg-gradient"></div
+            ></a>
+          </div>
+          <div class="col-4 px-0">
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-events-detailed-1.html"
+              style="
+                background-image: url(./images/gallery-image/real-state.png);
+                height: 95px;
+              ">
+              <div class="card-bottom">
+                <h2 class="color-white text-center mb-n1 pb-3">مستشار عقاري</h2>
+              </div>
+              <div class="card-overlay bg-gradient"></div
+            ></a>
+          </div>
+          <div class="col-4">
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-rental-car-select-3.html"
+              style="
+                background-image: url(./images/gallery-image/rental-car.jpg);
+                height: 95px;
+              ">
+              <div class="card-bottom">
+                <h2 class="color-white text-center mb-n1 pb-3">تأجير سيارات</h2>
+              </div>
+              <div class="card-overlay bg-gradient"></div
+            ></a>
+          </div>
+
+          <!-- Fourth Set-->
+          <div class="col-12">
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-content-home-2.html"
+              style="
+                background-image: url(./images/gallery-image/shops.png);
+                height: 150px;
+              ">
+              <h1 class="card-center color-white text-center mb-0">متاجر</h1>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+          </div>
+
+          <!-- Last Set-->
+          <div class="col-6 pe-1">
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-content-home-4.html"
+              style="
+                background-image: url(./images/gallery-image/visa&ticket.png);
+                height: 210px;
+              ">
+              <div class="card-bottom">
+                <h1 class="color-white text-center mb-3">التأشيرة والتذكرة</h1>
+              </div>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="page-food-home-1.html"
+              style="
+                background-image: url(./images/gallery-image/res-home.jpg);
+                height: 165px;
+              ">
+              <div class="card-bottom">
+                <h1 class="color-white text-center mb-3">طعام</h1>
+              </div>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+          </div>
+          <div class="col-6 ps-2">
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="#"
+              style="
+                background-image: url(./images/pictures/0l.jpg);
+                height: 120px;
+              ">
+              <div class="card-bottom">
+                <h5 class="color-white text-center mb-3">هاتف</h5>
+              </div>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="#"
+              style="
+                background-image: url(./images/pictures/31m.jpg);
+                height: 120px;
+              ">
+              <div class="card-bottom">
+                <h4 class="color-white text-center mb-3">كمبيوتر</h4>
+              </div>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+            <a
+              class="card mx-0 mb-2 card-style"
+              href="#"
+              style="
+                background-image: url(./images/pictures/10l.jpg);
+                height: 120px;
+              ">
+              <div class="card-bottom">
+                <h4 class="color-white text-center mb-3">تسجيل الشركة</h4>
+              </div>
+              <div class="card-overlay bg-gradient"></div>
+            </a>
+          </div>
+        </div>
       </div>
       <!-- End of Page Content-->
       <!-- All Menus, Action Sheets, Modals, Notifications, Toasts, Snackbars get Placed outside the <div class="page-content"> -->
@@ -117,23 +442,19 @@
               href="#"
               data-toggle-theme
               data-trigger-switch="switch-dark-mode"
-              class="pb-2 ms-n1"
-            >
+              class="pb-2 ms-n1">
               <i
-                class="fa font-12 fa-moon rounded-s bg-highlight color-white me-3"
-              ></i>
+                class="fa font-12 fa-moon rounded-s bg-highlight color-white me-3"></i>
               <span>Dark Mode</span>
               <div class="custom-control scale-switch ios-switch">
                 <input
                   data-toggle-theme
                   type="checkbox"
                   class="ios-input"
-                  id="switch-dark-mode"
-                />
+                  id="switch-dark-mode" />
                 <label
                   class="custom-control-label"
-                  for="switch-dark-mode"
-                ></label>
+                  for="switch-dark-mode"></label>
               </div>
               <i class="fa fa-angle-right"></i>
             </a>
@@ -159,8 +480,8 @@
       <!-- Menu Settings Highlights-->
       <div id="menu-highlights" class="menu menu-box-bottom menu-box-detached">
         <div class="menu-title">
-          <h1>Highlights</h1>
-          <p class="color-highlight">Any Element can have a Highlight Color</p>
+          <h1>أبرز الأحداث</h1>
+          <p class="color-highlight">يمكن لأي عنصر أن يكون له لون مميز</p>
           <a href="#" class="close-menu"><i class="fa fa-times"></i></a>
         </div>
         <div class="divider divider-margins mb-n2"></div>
