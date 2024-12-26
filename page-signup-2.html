@@ -130,6 +130,7 @@
               </div>
 
               <a
+                id="createAccountButton"
                 href="#"
                 class="back-button btn btn-full btn-m shadow-large rounded-sm text-uppercase font-900 bg-highlight"
                 >Create Account</a
@@ -369,6 +370,48 @@
         </div>
       </div>
     </div>
+
+    <script>
+      // Wait for the DOM to load
+      document.addEventListener("DOMContentLoaded", () => {
+        // Select input fields
+        const nameInput = document.getElementById("form1a");
+        const emailInput = document.getElementById("form1aa");
+        const passwordInput = document.getElementById("form3a");
+        const confirmPasswordInput = document.getElementById("form3a1");
+
+        // Select the Create Account button
+        const createAccountButton = document.getElementById(
+          "createAccountButton"
+        );
+
+        // Add click event listener
+        createAccountButton.addEventListener("click", (event) => {
+          event.preventDefault(); // Prevent page reload
+
+          // Get the values from the inputs
+          const name = nameInput.value;
+          const email = emailInput.value;
+          const password = passwordInput.value;
+          const confirmPassword = confirmPasswordInput.value;
+
+          // Log the data to the console
+          console.log("Name:", name);
+          console.log("Email:", email);
+          console.log("Password:", password);
+          console.log("Confirm Password:", confirmPassword);
+
+          // Optionally, validate the data here
+          if (!name || !email || !password || !confirmPassword) {
+            console.log("Please fill in all required fields.");
+          } else if (password !== confirmPassword) {
+            console.log("Passwords do not match.");
+          } else {
+            console.log("Form submitted successfully!");
+          }
+        });
+      });
+    </script>
 
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>

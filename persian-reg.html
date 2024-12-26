@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>All Of Dubai</title>
+    <link rel="icon" href="./images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/css/fontawesome-all.min.css" />
+    <link
+      rel="manifest"
+      href="_manifest.json"
+      data-pwa-version="set_in_manifest_and_pwa_js" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="app/icons/icon-192x192.png" />
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .file-preview img {
+      width: 50px;
+      margin: 5px;
+    }
+
+    .dropdown-menu {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  </style>
+  <body
+    class="theme-light"
+    data-highlight="highlight-red"
+    data-gradient="body-default">
+    <div id="preloader">
+      <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <div id="page">
+      <div id="footer-bar" class="footer-bar-1">
+        <a href="persian.html"><i class="fa fa-home"></i><span>خانه</span></a>
+        <a href="about-persian.html"
+          ><i class="fa fa-info-circle"></i><span>درباره ما</span></a
+        >
+        <a href=" persian-team-page.html"
+          ><i class="fa fa-envelope"></i><span>تماس باما</span></a
+        >
+        <a href="persian-reg.html" class="active-nav">
+          <i class="fa fa-paper-plane"></i>
+          <span>ارسال کنید</span>
+        </a>
+        <a href="#" data-menu="menu-settings"
+          ><i class="fa fa-cog"></i><span>تنظیمات</span></a
+        >
+      </div>
+      <div
+        class="container"
+        style="
+          max-width: 500px;
+          margin: 0 auto;
+          padding: 20px;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          background-color: #f9f9f9;
+        ">
+        <!-- Top Banner Image -->
+        <div
+          class="banner-container"
+          style="text-align: center; margin-bottom: 20px">
+          <img
+            src="./images/register-img/persian-reg.png"
+            alt="Banner Image"
+            style="width: 100%; border-radius: 10px" />
+        </div>
+
+        <div class="form-container" style="padding: 15px">
+          <h3
+            class="text-center mb-4"
+            style="
+              text-align: center;
+              margin-bottom: 20px;
+              font-family: Arial, sans-serif;
+              color: #333;
+            ">
+            Add Your Information
+          </h3>
+          <form id="customForm">
+            <div class="mb-3" style="margin-bottom: 15px">
+              <label
+                for="nameInput"
+                class="form-label"
+                style="
+                  display: block;
+                  font-weight: bold;
+                  margin-bottom: 5px;
+                  font-family: Arial, sans-serif;
+                ">
+                Name
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="nameInput"
+                placeholder="Enter your name"
+                required
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  box-sizing: border-box;
+                " />
+            </div>
+            <div class="mb-3" style="margin-bottom: 15px">
+              <label
+                for="emailInput"
+                class="form-label"
+                style="
+                  display: block;
+                  font-weight: bold;
+                  margin-bottom: 5px;
+                  font-family: Arial, sans-serif;
+                ">
+                Email
+              </label>
+              <input
+                type="email"
+                class="form-control"
+                id="emailInput"
+                placeholder="Enter your email"
+                oninput="validateEmail()"
+                required
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  box-sizing: border-box;
+                " />
+            </div>
+            <div
+              id="sendOtpButtonContainer"
+              class="mb-3"
+              style="display: none; margin-bottom: 15px">
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="sendOtp()"
+                style="
+                  background-color: #007bff;
+                  color: #fff;
+                  padding: 10px 15px;
+                  border: none;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  width: 100%;
+                  box-sizing: border-box;
+                ">
+                Send OTP
+              </button>
+            </div>
+            <div class="mb-3" style="margin-bottom: 15px">
+              <label
+                for="otpInput"
+                class="form-label"
+                style="
+                  display: block;
+                  font-weight: bold;
+                  margin-bottom: 5px;
+                  font-family: Arial, sans-serif;
+                ">
+                OTP
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="otpInput"
+                placeholder="Enter OTP"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  box-sizing: border-box;
+                " />
+            </div>
+
+            <div
+              class="mb-3 dropdown-container"
+              style="margin-bottom: 15px; position: relative">
+              <label
+                for="categoryInput"
+                class="form-label"
+                style="
+                  display: block;
+                  font-weight: bold;
+                  margin-bottom: 5px;
+                  font-family: Arial, sans-serif;
+                ">
+                Category
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="categoryInput"
+                placeholder="Select Category"
+                readonly
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  box-sizing: border-box;
+                  cursor: pointer;
+                " />
+              <ul
+                class="dropdown-menu"
+                id="categoryDropdown"
+                style="
+                  list-style: none;
+                  padding: 10px;
+                  margin: 0;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  background-color: #fff;
+                  position: absolute;
+                  top: 100%;
+                  left: 0;
+                  width: 100%;
+                  display: none;
+                  box-sizing: border-box;
+                  z-index: 1000;
+                ">
+                <li><a class="dropdown-item" href="#">سالن زیبایی</a></li>
+                <li><a class="dropdown-item" href="#">ماشین سرویس</a></li>
+                <li><a class="dropdown-item" href="#">سرگرمی</a></li>
+                <li><a class="dropdown-item" href="#">کلاب</a></li>
+                <li><a class="dropdown-item" href="#">اندام تناسب</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">سلامتی</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">واردات صادرات</a>
+                </li>
+                <li><a class="dropdown-item" href="#">مشاغل</a></li>
+                <li><a class="dropdown-item" href="#">ماساژ</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">املاک مشاور</a>
+                </li>
+                <li><a class="dropdown-item" href="#">ماشین اجاره</a></li>
+                <li><a class="dropdown-item" href="#"> فروشگاه ها </a></li>
+                <li><a class="dropdown-item" href="#"> ویزا و بلیط</a></li>
+                <li><a class="dropdown-item" href="#">غذا</a></li>
+                <li><a class="dropdown-item" href="#">تلفن</a></li>
+                <li><a class="dropdown-item" href="#">تاپ لپ</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">شرکت ثبت</a>
+                </li>
+              </ul>
+            </div>
+            <div class="mb-3" style="margin-bottom: 15px">
+              <label
+                for="fileInput"
+                class="form-label"
+                style="
+                  display: block;
+                  font-weight: bold;
+                  margin-bottom: 5px;
+                  font-family: Arial, sans-serif;
+                ">
+                Upload Images
+              </label>
+              <input
+                type="file"
+                class="form-control"
+                id="fileInput"
+                multiple
+                onchange="handleFileSelect()"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  box-sizing: border-box;
+                " />
+              <div
+                id="filePreview"
+                class="file-preview mt-2"
+                style="margin-top: 10px"></div>
+            </div>
+            <div class="mb-3" style="margin-bottom: 15px">
+              <label
+                for="additionalInfo"
+                class="form-label"
+                style="
+                  display: block;
+                  font-weight: bold;
+                  margin-bottom: 5px;
+                  font-family: Arial, sans-serif;
+                ">
+                Additional Info
+              </label>
+              <textarea
+                class="form-control"
+                id="additionalInfo"
+                rows="4"
+                placeholder="Enter any additional information"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  box-sizing: border-box;
+                "></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-success w-100"
+              style="
+                background-color: #28a745;
+                color: #fff;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                box-sizing: border-box;
+              ">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- End of Page Content-->
+      <!-- All Menus, Action Sheets, Modals, Notifications, Toasts, Snackbars get Placed outside the <div class="page-content"> -->
+      <div id="menu-settings" class="menu menu-box-bottom menu-box-detached">
+        <div class="menu-title mt-0 pt-0">
+          <h1>Settings</h1>
+          <p class="color-highlight">Flexible and Easy to Use</p>
+          <a href="#" class="close-menu"><i class="fa fa-times"></i></a>
+        </div>
+        <div class="divider divider-margins mb-n2"></div>
+        <div class="content">
+          <div class="list-group list-custom-small">
+            <a
+              href="#"
+              data-toggle-theme
+              data-trigger-switch="switch-dark-mode"
+              class="pb-2 ms-n1">
+              <i
+                class="fa font-12 fa-moon rounded-s bg-highlight color-white me-3"></i>
+              <span>Dark Mode</span>
+              <div class="custom-control scale-switch ios-switch">
+                <input
+                  data-toggle-theme
+                  type="checkbox"
+                  class="ios-input"
+                  id="switch-dark-mode" />
+                <label
+                  class="custom-control-label"
+                  for="switch-dark-mode"></label>
+              </div>
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+          <div class="list-group list-custom-large">
+            <a data-menu="menu-highlights" href="#">
+              <i class="fa font-14 fa-tint bg-green-dark rounded-s"></i>
+              <span>Page Highlight</span>
+              <strong>16 Colors Highlights Included</strong>
+              <span class="badge bg-highlight color-white">HOT</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+            <a data-menu="menu-backgrounds" href="#" class="border-0">
+              <i class="fa font-14 fa-cog bg-blue-dark rounded-s"></i>
+              <span>Background Color</span>
+              <strong>10 Page Gradients Included</strong>
+              <span class="badge bg-highlight color-white">NEW</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Menu Settings Highlights-->
+      <div id="menu-highlights" class="menu menu-box-bottom menu-box-detached">
+        <div class="menu-title">
+          <h1>Highlights</h1>
+          <p class="color-highlight">Any Element can have a Highlight Color</p>
+          <a href="#" class="close-menu"><i class="fa fa-times"></i></a>
+        </div>
+        <div class="divider divider-margins mb-n2"></div>
+        <div class="content">
+          <div class="highlight-changer">
+            <a href="#" data-change-highlight="blue"
+              ><i class="fa fa-circle color-blue-dark"></i
+              ><span class="color-blue-light">Default</span></a
+            >
+            <a href="#" data-change-highlight="red"
+              ><i class="fa fa-circle color-red-dark"></i
+              ><span class="color-red-light">Red</span></a
+            >
+            <a href="#" data-change-highlight="orange"
+              ><i class="fa fa-circle color-orange-dark"></i
+              ><span class="color-orange-light">Orange</span></a
+            >
+            <a href="#" data-change-highlight="pink2"
+              ><i class="fa fa-circle color-pink2-dark"></i
+              ><span class="color-pink-dark">Pink</span></a
+            >
+            <a href="#" data-change-highlight="magenta"
+              ><i class="fa fa-circle color-magenta-dark"></i
+              ><span class="color-magenta-light">Purple</span></a
+            >
+            <a href="#" data-change-highlight="aqua"
+              ><i class="fa fa-circle color-aqua-dark"></i
+              ><span class="color-aqua-light">Aqua</span></a
+            >
+            <a href="#" data-change-highlight="teal"
+              ><i class="fa fa-circle color-teal-dark"></i
+              ><span class="color-teal-light">Teal</span></a
+            >
+            <a href="#" data-change-highlight="mint"
+              ><i class="fa fa-circle color-mint-dark"></i
+              ><span class="color-mint-light">Mint</span></a
+            >
+            <a href="#" data-change-highlight="green"
+              ><i class="fa fa-circle color-green-light"></i
+              ><span class="color-green-light">Green</span></a
+            >
+            <a href="#" data-change-highlight="grass"
+              ><i class="fa fa-circle color-green-dark"></i
+              ><span class="color-green-dark">Grass</span></a
+            >
+            <a href="#" data-change-highlight="sunny"
+              ><i class="fa fa-circle color-yellow-light"></i
+              ><span class="color-yellow-light">Sunny</span></a
+            >
+            <a href="#" data-change-highlight="yellow"
+              ><i class="fa fa-circle color-yellow-dark"></i
+              ><span class="color-yellow-light">Goldish</span></a
+            >
+            <a href="#" data-change-highlight="brown"
+              ><i class="fa fa-circle color-brown-dark"></i
+              ><span class="color-brown-light">Wood</span></a
+            >
+            <a href="#" data-change-highlight="night"
+              ><i class="fa fa-circle color-dark-dark"></i
+              ><span class="color-dark-light">Night</span></a
+            >
+            <a href="#" data-change-highlight="dark"
+              ><i class="fa fa-circle color-dark-light"></i
+              ><span class="color-dark-light">Dark</span></a
+            >
+            <div class="clearfix"></div>
+          </div>
+          <a
+            href="#"
+            data-menu="menu-settings"
+            class="mb-3 btn btn-full btn-m rounded-sm bg-highlight shadow-xl text-uppercase font-900 mt-4"
+            >Back to Settings</a
+          >
+        </div>
+      </div>
+      <!-- Menu Settings Backgrounds-->
+      <div id="menu-backgrounds" class="menu menu-box-bottom menu-box-detached">
+        <div class="menu-title">
+          <h1>Backgrounds</h1>
+          <p class="color-highlight">Change Page Color Behind Content Boxes</p>
+          <a href="#" class="close-menu"><i class="fa fa-times"></i></a>
+        </div>
+        <div class="divider divider-margins mb-n2"></div>
+        <div class="content">
+          <div class="background-changer">
+            <a href="#" data-change-background="default"
+              ><i class="bg-theme"></i
+              ><span class="color-dark-dark">Default</span></a
+            >
+            <a href="#" data-change-background="plum"
+              ><i class="body-plum"></i
+              ><span class="color-plum-dark">Plum</span></a
+            >
+            <a href="#" data-change-background="magenta"
+              ><i class="body-magenta"></i
+              ><span class="color-dark-dark">Magenta</span></a
+            >
+            <a href="#" data-change-background="dark"
+              ><i class="body-dark"></i
+              ><span class="color-dark-dark">Dark</span></a
+            >
+            <a href="#" data-change-background="violet"
+              ><i class="body-violet"></i
+              ><span class="color-violet-dark">Violet</span></a
+            >
+            <a href="#" data-change-background="red"
+              ><i class="body-red"></i
+              ><span class="color-red-dark">Red</span></a
+            >
+            <a href="#" data-change-background="green"
+              ><i class="body-green"></i
+              ><span class="color-green-dark">Green</span></a
+            >
+            <a href="#" data-change-background="sky"
+              ><i class="body-sky"></i
+              ><span class="color-sky-dark">Sky</span></a
+            >
+            <a href="#" data-change-background="orange"
+              ><i class="body-orange"></i
+              ><span class="color-orange-dark">Orange</span></a
+            >
+            <a href="#" data-change-background="yellow"
+              ><i class="body-yellow"></i
+              ><span class="color-yellow-dark">Yellow</span></a
+            >
+            <div class="clearfix"></div>
+          </div>
+          <a
+            href="#"
+            data-menu="menu-settings"
+            class="mb-3 btn btn-full btn-m rounded-sm bg-highlight shadow-xl text-uppercase font-900 mt-4"
+            >Back to Settings</a
+          >
+        </div>
+      </div>
+      <!-- Menu Share -->
+      <div id="menu-share" class="menu menu-box-bottom menu-box-detached">
+        <div class="menu-title mt-n1">
+          <h1>Share the Love</h1>
+          <p class="color-highlight">
+            Just Tap the Social Icon. We'll add the Link
+          </p>
+          <a href="#" class="close-menu"><i class="fa fa-times"></i></a>
+        </div>
+        <div class="content mb-0">
+          <div class="divider mb-0"></div>
+          <div class="list-group list-custom-small list-icon-0">
+            <a href="auto_generated" class="shareToFacebook external-link">
+              <i class="font-18 fab fa-facebook-square color-facebook"></i>
+              <span class="font-13">Facebook</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+            <a href="auto_generated" class="shareToTwitter external-link">
+              <i class="font-18 fab fa-twitter-square color-twitter"></i>
+              <span class="font-13">Twitter</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+            <a href="auto_generated" class="shareToLinkedIn external-link">
+              <i class="font-18 fab fa-linkedin color-linkedin"></i>
+              <span class="font-13">LinkedIn</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+            <a href="auto_generated" class="shareToWhatsApp external-link">
+              <i class="font-18 fab fa-whatsapp-square color-whatsapp"></i>
+              <span class="font-13">WhatsApp</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+            <a href="auto_generated" class="shareToMail external-link border-0">
+              <i class="font-18 fa fa-envelope-square color-mail"></i>
+              <span class="font-13">Email</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const categoryInput = document.getElementById("categoryInput");
+        const categoryDropdown = document.getElementById("categoryDropdown");
+        const dropdownItems =
+          categoryDropdown.querySelectorAll(".dropdown-item");
+
+        // Toggle dropdown visibility
+        categoryInput.addEventListener("click", () => {
+          if (categoryDropdown.style.display === "none") {
+            categoryDropdown.style.display = "block";
+          } else {
+            categoryDropdown.style.display = "none";
+          }
+        });
+
+        // Handle item selection
+        dropdownItems.forEach((item) => {
+          item.addEventListener("click", (e) => {
+            e.preventDefault();
+            categoryInput.value = item.textContent;
+            categoryDropdown.style.display = "none";
+          });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest(".dropdown-container")) {
+            categoryDropdown.style.display = "none";
+          }
+        });
+      });
+      let imageBase64Array = [];
+
+      // image uploaded
+      function handleFileSelect() {
+        const files = document.getElementById("fileInput").files;
+        const filePreview = document.getElementById("filePreview");
+        filePreview.innerHTML = ""; // Clear previous previews
+        imageBase64Array = []; // Clear previous base64 data
+
+        Array.from(files).forEach((file) => {
+          const reader = new FileReader();
+
+          reader.onload = (e) => {
+            // Store base64 data
+            imageBase64Array.push({
+              name: file.name,
+              type: file.type,
+              base64: e.target.result,
+            });
+
+            // Create preview
+            const img = document.createElement("img");
+            img.src = e.target.result;
+            img.alt = file.name;
+            img.style.maxWidth = "200px";
+            img.style.marginRight = "10px";
+            img.style.marginBottom = "10px";
+            filePreview.appendChild(img);
+          };
+
+          reader.readAsDataURL(file);
+        });
+      }
+
+      // Email validation
+      function validateEmail() {
+        const emailInput = document.getElementById("emailInput").value;
+        const sendOtpButtonContainer = document.getElementById(
+          "sendOtpButtonContainer"
+        );
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailRegex.test(emailInput.trim())) {
+          sendOtpButtonContainer.style.display = "block";
+        } else {
+          sendOtpButtonContainer.style.display = "none";
+        }
+      }
+
+      //OTP functionality
+      function sendOtp() {
+        alert("OTP has been sent to your email!");
+      }
+
+      // Form submission
+      document.getElementById("customForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const formData = {
+          name: document.getElementById("nameInput").value,
+          email: document.getElementById("emailInput").value,
+          otp: document.getElementById("otpInput").value,
+          category: document.getElementById("categoryInput").value,
+          additionalInfo: document.getElementById("additionalInfo").value,
+          images: imageBase64Array, // Add the base64 images to form data
+        };
+
+        console.log("Form Data:", {
+          ...formData,
+          images: formData.images.map((img) => ({
+            name: img.name,
+            type: img.type,
+            base64: img.base64.substring(0, 50) + "...", // Truncate base64 for console readability
+          })),
+        });
+
+        // You can also see the full data in the console
+        console.log("Full form data with complete base64:", formData);
+
+        // Clear all form fields
+        document.getElementById("nameInput").value = "";
+        document.getElementById("emailInput").value = "";
+        document.getElementById("otpInput").value = "";
+        document.getElementById("categoryInput").value = "";
+        document.getElementById("additionalInfo").value = "";
+        document.getElementById("fileInput").value = "";
+
+        // Clear image preview and base64 array
+        const filePreview = document.getElementById("filePreview");
+        filePreview.innerHTML = "";
+        imageBase64Array = [];
+
+        // Hide OTP button container if it exists
+        const sendOtpButtonContainer = document.getElementById(
+          "sendOtpButtonContainer"
+        );
+        if (sendOtpButtonContainer) {
+          sendOtpButtonContainer.style.display = "none";
+        }
+
+        alert("Form submitted successfully! Check console for details.");
+      });
+    </script>
+
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+  </body>
+</html>

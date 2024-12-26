@@ -55,7 +55,7 @@
         >
       </div>
 
-      <div class="page-content header-clear-small">
+      <!-- <div class="page-content header-clear-small">
         <div
           class="card card-style preload-img"
           data-src="images/pictures/18.jpg"
@@ -262,9 +262,9 @@
                 >
               </div>
             </div>
-          </div>
-
-          <!-- <div class="search-trending card card-style">
+          </div> -->
+      <!-- 2nd part -->
+      <!-- <div class="search-trending card card-style">
             <div class="content mb-2">
               <h3>Trending Searches</h3>
               <p class="font-11 mt-n2">What others are Searching for.</p>
@@ -296,9 +296,9 @@
               </a>
             </div>
           </div> -->
-        </div>
+      <!-- </div> -->
 
-        <!-- <div class="footer card card-style">
+      <!-- <div class="footer card card-style">
           <a href="#" class="footer-title"
             ><span class="color-highlight">All Of Dubai </span></a
           >
@@ -345,7 +345,111 @@
           </p>
           <div class="clear"></div>
         </div> -->
-      </div>
+      <!-- </div> -->
+
+      <!-- form content -->
+
+      <div class="page-content pb-0">
+        <div data-card-height="cover" class="card">
+          <div class="card-top notch-clear">
+            <div class="d-flex">
+              <a href="#" data-back-button class="me-auto icon icon-m"
+                ><i class="font-14 fa fa-arrow-left color-theme"></i
+              ></a>
+              <a
+                href="#"
+                data-toggle-theme
+                class="show-on-theme-light ms-auto icon icon-m"
+                ><i class="font-12 fa fa-moon color-theme"></i
+              ></a>
+              <a
+                href="#"
+                data-toggle-theme
+                class="show-on-theme-dark ms-auto icon icon-m"
+                ><i class="font-12 fa fa-lightbulb color-yellow-dark"></i
+              ></a>
+            </div>
+          </div>
+          <div class="card-center">
+            <div class="ps-5 pe-5">
+              <h1 class="text-center font-800 font-40 mb-1">Sign Up</h1>
+              <p class="color-highlight text-center font-12">
+                Create an Account. It's free!
+              </p>
+
+              <div class="input-style no-borders has-icon validate-field">
+                <i class="fa fa-user"></i>
+                <input
+                  type="name"
+                  class="form-control validate-name"
+                  id="form1a"
+                  placeholder="Name" />
+                <label for="form1a" class="color-blue-dark font-10 mt-1"
+                  >Name</label
+                >
+                <i class="fa fa-times disabled invalid color-red-dark"></i>
+                <i class="fa fa-check disabled valid color-green-dark"></i>
+                <em>(required)</em>
+              </div>
+              <div class="input-style no-borders has-icon validate-field mt-2">
+                <i class="fa fa-at"></i>
+                <input
+                  type="email"
+                  class="form-control validate-name"
+                  id="form1aa"
+                  placeholder="Email" />
+                <label for="form1aa" class="color-blue-dark font-10 mt-1"
+                  >Email</label
+                >
+                <i class="fa fa-times disabled invalid color-red-dark"></i>
+                <i class="fa fa-check disabled valid color-green-dark"></i>
+                <em>(required)</em>
+              </div>
+              <div class="input-style no-borders has-icon validate-field mt-2">
+                <i class="fa fa-lock"></i>
+                <input
+                  type="password"
+                  class="form-control validate-text"
+                  id="form3a"
+                  placeholder="Choose a Password" />
+                <label for="form3a" class="color-blue-dark font-10 mt-1"
+                  >Choose a Password</label
+                >
+                <i class="fa fa-times disabled invalid color-red-dark"></i>
+                <i class="fa fa-check disabled valid color-green-dark"></i>
+                <em>(required)</em>
+              </div>
+              <div class="input-style no-borders has-icon validate-field mt-2">
+                <i class="fa fa-lock"></i>
+                <input
+                  type="password"
+                  class="form-control validate-text"
+                  id="form3a1"
+                  placeholder="Confirm your Password" />
+                <label for="form3a1" class="color-blue-dark font-10 mt-1"
+                  >Confirm your Password</label
+                >
+                <i class="fa fa-times disabled invalid color-red-dark"></i>
+                <i class="fa fa-check disabled valid color-green-dark"></i>
+                <em>(required)</em>
+              </div>
+
+              <div class="text-center mb-5 mt-5">
+                <a href="page-signin-2.html" class="font-12"
+                  >Already Registered? Sign in Here</a
+                >
+              </div>
+
+              <a
+                id="createAccountButton"
+                href="#"
+                class="back-button btn btn-full btn-m shadow-large rounded-sm text-uppercase font-900 bg-highlight"
+                >Create Account</a
+              >
+            </div>
+          </div>
+        </div>
+
       <!-- End of Page Content-->
       <!-- All Menus, Action Sheets, Modals, Notifications, Toasts, Snackbars get Placed outside the <div class="page-content"> -->
       <div id="menu-settings" class="menu menu-box-bottom menu-box-detached">
@@ -577,6 +681,48 @@
         </div>
       </div>
     </div>
+
+    <script>
+      // Wait for the DOM to load
+      document.addEventListener("DOMContentLoaded", () => {
+        // Select input fields
+        const nameInput = document.getElementById("form1a");
+        const emailInput = document.getElementById("form1aa");
+        const passwordInput = document.getElementById("form3a");
+        const confirmPasswordInput = document.getElementById("form3a1");
+
+        // Select the Create Account button
+        const createAccountButton = document.getElementById(
+          "createAccountButton"
+        );
+
+        // Add click event listener
+        createAccountButton.addEventListener("click", (event) => {
+          event.preventDefault(); // Prevent page reload
+
+          // Get the values from the inputs
+          const name = nameInput.value;
+          const email = emailInput.value;
+          const password = passwordInput.value;
+          const confirmPassword = confirmPasswordInput.value;
+
+          // Log the data to the console
+          console.log("Name:", name);
+          console.log("Email:", email);
+          console.log("Password:", password);
+          console.log("Confirm Password:", confirmPassword);
+
+          // Optionally, validate the data here
+          if (!name || !email || !password || !confirmPassword) {
+            console.log("Please fill in all required fields.");
+          } else if (password !== confirmPassword) {
+            console.log("Passwords do not match.");
+          } else {
+            console.log("Form submitted successfully!");
+          }
+        });
+      });
+    </script>
 
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
