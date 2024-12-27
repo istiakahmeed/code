@@ -5,29 +5,35 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent" />
+      content="black-translucent"
+    />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
     <title>All Of Dubai</title>
     <link rel="icon" href="./images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       type="text/css"
-      href="fonts/css/fontawesome-all.min.css" />
+      href="fonts/css/fontawesome-all.min.css"
+    />
     <link
       rel="manifest"
       href="_manifest.json"
-      data-pwa-version="set_in_manifest_and_pwa_js" />
+      data-pwa-version="set_in_manifest_and_pwa_js"
+    />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="app/icons/icon-192x192.png" />
+      href="app/icons/icon-192x192.png"
+    />
   </head>
   <style>
     body {
@@ -57,7 +63,8 @@
   <body
     class="theme-light"
     data-highlight="highlight-red"
-    data-gradient="body-default">
+    data-gradient="body-default"
+  >
     <div id="preloader">
       <div class="spinner-border color-highlight" role="status"></div>
     </div>
@@ -92,15 +99,18 @@
           border: 1px solid #ddd;
           border-radius: 10px;
           background-color: #f9f9f9;
-        ">
+        "
+      >
         <!-- Top Banner Image -->
         <div
           class="banner-container"
-          style="text-align: center; margin-bottom: 20px">
+          style="text-align: center; margin-bottom: 20px"
+        >
           <img
             src="./images/register-img/arabic-reg.png"
             alt="Banner Image"
-            style="width: 100%; border-radius: 10px" />
+            style="width: 100%; border-radius: 10px"
+          />
         </div>
 
         <div class="form-container" style="padding: 15px">
@@ -111,26 +121,34 @@
               margin-bottom: 20px;
               font-family: Arial, sans-serif;
               color: #333;
-            ">
+            "
+          >
             Add Your Information
           </h3>
-          <form id="customForm">
+          <form
+            id="customForm"
+            action="http://localhost:3000/submit-form"
+            method="POST"
+            enctype="multipart/form-data"
+          >
             <div class="mb-3" style="margin-bottom: 15px">
               <label
-                for="nameInput"
+                for="name"
                 class="form-label"
                 style="
                   display: block;
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                ">
+                "
+              >
                 Name
               </label>
               <input
                 type="text"
                 class="form-control"
-                id="nameInput"
+                id="name"
+                name="name"
                 placeholder="Enter your name"
                 required
                 style="
@@ -139,24 +157,27 @@
                   border: 1px solid #ccc;
                   border-radius: 5px;
                   box-sizing: border-box;
-                " />
+                "
+              />
             </div>
             <div class="mb-3" style="margin-bottom: 15px">
               <label
-                for="emailInput"
+                for="email"
                 class="form-label"
                 style="
                   display: block;
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                ">
+                "
+              >
                 Email
               </label>
               <input
                 type="email"
                 class="form-control"
-                id="emailInput"
+                id="email"
+                name="email"
                 placeholder="Enter your email"
                 oninput="validateEmail()"
                 required
@@ -166,12 +187,14 @@
                   border: 1px solid #ccc;
                   border-radius: 5px;
                   box-sizing: border-box;
-                " />
+                "
+              />
             </div>
             <div
               id="sendOtpButtonContainer"
               class="mb-3"
-              style="display: none; margin-bottom: 15px">
+              style="display: none; margin-bottom: 15px"
+            >
               <button
                 type="button"
                 class="btn btn-primary"
@@ -185,26 +208,29 @@
                   cursor: pointer;
                   width: 100%;
                   box-sizing: border-box;
-                ">
+                "
+              >
                 Send OTP
               </button>
             </div>
             <div class="mb-3" style="margin-bottom: 15px">
               <label
-                for="otpInput"
+                for="otp"
                 class="form-label"
                 style="
                   display: block;
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                ">
+                "
+              >
                 OTP
               </label>
               <input
                 type="text"
                 class="form-control"
-                id="otpInput"
+                id="otp"
+                name="otp"
                 placeholder="Enter OTP"
                 style="
                   width: 100%;
@@ -212,27 +238,31 @@
                   border: 1px solid #ccc;
                   border-radius: 5px;
                   box-sizing: border-box;
-                " />
+                "
+              />
             </div>
 
             <div
               class="mb-3 dropdown-container"
-              style="margin-bottom: 15px; position: relative">
+              style="margin-bottom: 15px; position: relative"
+            >
               <label
-                for="categoryInput"
+                for="category"
                 class="form-label"
                 style="
                   display: block;
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                ">
+                "
+              >
                 Category
               </label>
               <input
                 type="text"
                 class="form-control"
-                id="categoryInput"
+                id="category"
+                name="category"
                 placeholder="Select Category"
                 readonly
                 style="
@@ -242,10 +272,12 @@
                   border-radius: 5px;
                   box-sizing: border-box;
                   cursor: pointer;
-                " />
+                "
+              />
               <ul
                 class="dropdown-menu"
                 id="categoryDropdown"
+                name="categoryDropdown"
                 style="
                   list-style: none;
                   padding: 10px;
@@ -260,7 +292,8 @@
                   display: none;
                   box-sizing: border-box;
                   z-index: 1000;
-                ">
+                "
+              >
                 <li><a class="dropdown-item" href="#">Beauty Salon</a></li>
                 <li><a class="dropdown-item" href="#">Car Service</a></li>
                 <li><a class="dropdown-item" href="#">Entertainment</a></li>
@@ -288,21 +321,23 @@
             </div>
             <div class="mb-3" style="margin-bottom: 15px">
               <label
-                for="fileInput"
+                for="images"
                 class="form-label"
                 style="
                   display: block;
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                ">
+                "
+              >
                 Upload Images
               </label>
               <input
                 type="file"
                 class="form-control"
-                id="fileInput"
+                id="images"
                 multiple
+                name="images"
                 onchange="handleFileSelect()"
                 style="
                   width: 100%;
@@ -310,11 +345,13 @@
                   border: 1px solid #ccc;
                   border-radius: 5px;
                   box-sizing: border-box;
-                " />
+                "
+              />
               <div
-                id="filePreview"
+                id="imagePreview"
                 class="file-preview mt-2"
-                style="margin-top: 10px"></div>
+                style="margin-top: 10px"
+              ></div>
             </div>
             <div class="mb-3" style="margin-bottom: 15px">
               <label
@@ -325,12 +362,14 @@
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                ">
+                "
+              >
                 Additional Info
               </label>
               <textarea
                 class="form-control"
                 id="additionalInfo"
+                name="additionalInfo"
                 rows="4"
                 placeholder="Enter any additional information"
                 style="
@@ -339,7 +378,8 @@
                   border: 1px solid #ccc;
                   border-radius: 5px;
                   box-sizing: border-box;
-                "></textarea>
+                "
+              ></textarea>
             </div>
             <button
               type="submit"
@@ -353,7 +393,8 @@
                 cursor: pointer;
                 width: 100%;
                 box-sizing: border-box;
-              ">
+              "
+            >
               Submit
             </button>
           </form>
@@ -375,19 +416,23 @@
               href="#"
               data-toggle-theme
               data-trigger-switch="switch-dark-mode"
-              class="pb-2 ms-n1">
+              class="pb-2 ms-n1"
+            >
               <i
-                class="fa font-12 fa-moon rounded-s bg-highlight color-white me-3"></i>
+                class="fa font-12 fa-moon rounded-s bg-highlight color-white me-3"
+              ></i>
               <span>Dark Mode</span>
               <div class="custom-control scale-switch ios-switch">
                 <input
                   data-toggle-theme
                   type="checkbox"
                   class="ios-input"
-                  id="switch-dark-mode" />
+                  id="switch-dark-mode"
+                />
                 <label
                   class="custom-control-label"
-                  for="switch-dark-mode"></label>
+                  for="switch-dark-mode"
+                ></label>
               </div>
               <i class="fa fa-angle-right"></i>
             </a>
@@ -594,13 +639,13 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const categoryInput = document.getElementById("categoryInput");
+        const category = document.getElementById("category");
         const categoryDropdown = document.getElementById("categoryDropdown");
         const dropdownItems =
           categoryDropdown.querySelectorAll(".dropdown-item");
 
         // Toggle dropdown visibility
-        categoryInput.addEventListener("click", () => {
+        category.addEventListener("click", () => {
           if (categoryDropdown.style.display === "none") {
             categoryDropdown.style.display = "block";
           } else {
@@ -612,7 +657,7 @@
         dropdownItems.forEach((item) => {
           item.addEventListener("click", (e) => {
             e.preventDefault();
-            categoryInput.value = item.textContent;
+            category.value = item.textContent;
             categoryDropdown.style.display = "none";
           });
         });
@@ -628,8 +673,8 @@
 
       // image uploaded
       function handleFileSelect() {
-        const files = document.getElementById("fileInput").files;
-        const filePreview = document.getElementById("filePreview");
+        const files = document.getElementById("images").files;
+        const filePreview = document.getElementById("imagePreview");
         filePreview.innerHTML = ""; // Clear previous previews
         imageBase64Array = []; // Clear previous base64 data
 
@@ -660,72 +705,72 @@
 
       // Email validation
       function validateEmail() {
-        const emailInput = document.getElementById("emailInput").value;
+        const email = document.getElementById("email").value;
         const sendOtpButtonContainer = document.getElementById(
           "sendOtpButtonContainer"
         );
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (emailRegex.test(emailInput.trim())) {
+        if (emailRegex.test(email.trim())) {
           sendOtpButtonContainer.style.display = "block";
         } else {
           sendOtpButtonContainer.style.display = "none";
         }
       }
 
-      //OTP functionality
       function sendOtp() {
-        alert("OTP has been sent to your email!");
+        const email = document.getElementById("email").value;
+
+        fetch("http://localhost:3000/send-otp", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            alert(data.message);
+          })
+          .catch((error) => {
+            console.error("Error sending OTP:", error);
+            alert("Failed to send OTP. Please try again.");
+          });
       }
 
-      // Form submission
-      document.getElementById("customForm").addEventListener("submit", (e) => {
-        e.preventDefault();
+      document
+        .getElementById("customForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-        const formData = {
-          name: document.getElementById("nameInput").value,
-          email: document.getElementById("emailInput").value,
-          otp: document.getElementById("otpInput").value,
-          category: document.getElementById("categoryInput").value,
-          additionalInfo: document.getElementById("additionalInfo").value,
-          images: imageBase64Array, // Add the base64 images to form data
-        };
+          const form = document.getElementById("customForm");
+          const formData = new FormData(form);
 
-        console.log("Form Data:", {
-          ...formData,
-          images: formData.images.map((img) => ({
-            name: img.name,
-            type: img.type,
-            base64: img.base64.substring(0, 50) + "...", // Truncate base64 for console readability
-          })),
+          console.log("FormData to send:");
+          for (let [key, value] of formData.entries()) {
+            console.log(`${key}:`, value);
+          }
+
+          try {
+            const response = await fetch("http://localhost:3000/submit-form", {
+              method: "POST",
+              body: formData,
+            });
+
+            if (!response.ok) {
+              const error = await response.text();
+              console.error("Response Error:", error);
+              alert(`Error: ${response.statusText}`);
+            } else {
+              const data = await response.json();
+              console.log("Server Response:", data);
+              alert(data.message);
+            }
+          } catch (error) {
+            console.error("Fetch Error:", error);
+            alert("An error occurred while submitting the form.");
+          }
         });
-
-        // You can also see the full data in the console
-        console.log("Full form data with complete base64:", formData);
-
-        // Clear all form fields
-        document.getElementById("nameInput").value = "";
-        document.getElementById("emailInput").value = "";
-        document.getElementById("otpInput").value = "";
-        document.getElementById("categoryInput").value = "";
-        document.getElementById("additionalInfo").value = "";
-        document.getElementById("fileInput").value = "";
-
-        // Clear image preview and base64 array
-        const filePreview = document.getElementById("filePreview");
-        filePreview.innerHTML = "";
-        imageBase64Array = [];
-
-        // Hide OTP button container if it exists
-        const sendOtpButtonContainer = document.getElementById(
-          "sendOtpButtonContainer"
-        );
-        if (sendOtpButtonContainer) {
-          sendOtpButtonContainer.style.display = "none";
-        }
-
-        alert("Form submitted successfully! Check console for details.");
-      });
     </script>
 
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
