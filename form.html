@@ -5,36 +5,30 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+      content="black-translucent" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
-    />
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <title>All Of Dubai</title>
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./images/favicon.png" />
     <link rel="icon" href="./images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link
       rel="stylesheet"
       type="text/css"
-      href="fonts/css/fontawesome-all.min.css"
-    />
+      href="fonts/css/fontawesome-all.min.css" />
     <link
       rel="manifest"
       href="_manifest.json"
-      data-pwa-version="set_in_manifest_and_pwa_js"
-    />
+      data-pwa-version="set_in_manifest_and_pwa_js" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="app/icons/icon-192x192.png"
-    />
+      href="app/icons/icon-192x192.png" />
   </head>
   <style>
     body {
@@ -64,8 +58,7 @@
   <body
     class="theme-light"
     data-highlight="highlight-red"
-    data-gradient="body-default"
-  >
+    data-gradient="body-default">
     <div id="preloader">
       <div class="spinner-border color-highlight" role="status"></div>
     </div>
@@ -100,18 +93,15 @@
           border: 1px solid #ddd;
           border-radius: 10px;
           background-color: #f9f9f9;
-        "
-      >
+        ">
         <!-- Top Banner Image -->
         <div
           class="banner-container"
-          style="text-align: center; margin-bottom: 20px"
-        >
+          style="text-align: center; margin-bottom: 20px">
           <img
             src="./images/register-img/arabic-reg.png"
             alt="Banner Image"
-            style="width: 100%; border-radius: 10px"
-          />
+            style="width: 100%; border-radius: 10px" />
         </div>
 
         <div class="form-container" style="padding: 15px">
@@ -122,16 +112,14 @@
               margin-bottom: 20px;
               font-family: Arial, sans-serif;
               color: #333;
-            "
-          >
+            ">
             Add Your Information
           </h3>
           <form
             id="customForm"
             action="http://localhost:3000/submit-form"
             method="POST"
-            enctype="multipart/form-data"
-          >
+            enctype="multipart/form-data">
             <div class="mb-3" style="margin-bottom: 15px">
               <label
                 for="name"
@@ -141,8 +129,7 @@
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                "
-              >
+                ">
                 Name
               </label>
               <input
@@ -158,8 +145,7 @@
                   border: 1px solid #ccc;
                   border-radius: 5px;
                   box-sizing: border-box;
-                "
-              />
+                " />
             </div>
             <div class="mb-3" style="margin-bottom: 15px">
               <label
@@ -170,8 +156,7 @@
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                "
-              >
+                ">
                 Email
               </label>
               <input
@@ -188,14 +173,12 @@
                   border: 1px solid #ccc;
                   border-radius: 5px;
                   box-sizing: border-box;
-                "
-              />
+                " />
             </div>
             <div
               id="sendOtpButtonContainer"
               class="mb-3"
-              style="display: none; margin-bottom: 15px"
-            >
+              style="display: none; margin-bottom: 15px">
               <button
                 type="button"
                 class="btn btn-primary"
@@ -209,8 +192,7 @@
                   cursor: pointer;
                   width: 100%;
                   box-sizing: border-box;
-                "
-              >
+                ">
                 Send OTP
               </button>
             </div>
@@ -223,8 +205,7 @@
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                "
-              >
+                ">
                 OTP
               </label>
               <input
@@ -239,14 +220,12 @@
                   border: 1px solid #ccc;
                   border-radius: 5px;
                   box-sizing: border-box;
-                "
-              />
+                " />
             </div>
 
             <div
               class="mb-3 dropdown-container"
-              style="margin-bottom: 15px; position: relative"
-            >
+              style="margin-bottom: 15px; position: relative">
               <label
                 for="category"
                 class="form-label"
@@ -255,8 +234,7 @@
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                "
-              >
+                ">
                 Category
               </label>
               <input
@@ -273,8 +251,7 @@
                   border-radius: 5px;
                   box-sizing: border-box;
                   cursor: pointer;
-                "
-              />
+                " />
               <ul
                 class="dropdown-menu"
                 id="categoryDropdown"
@@ -293,8 +270,7 @@
                   display: none;
                   box-sizing: border-box;
                   z-index: 1000;
-                "
-              >
+                ">
                 <li><a class="dropdown-item" href="#">Beauty Salon</a></li>
                 <li><a class="dropdown-item" href="#">Car Service</a></li>
                 <li><a class="dropdown-item" href="#">Entertainment</a></li>
@@ -329,8 +305,7 @@
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                "
-              >
+                ">
                 Upload Images
               </label>
               <input
@@ -346,13 +321,11 @@
                   border: 1px solid #ccc;
                   border-radius: 5px;
                   box-sizing: border-box;
-                "
-              />
+                " />
               <div
                 id="imagePreview"
                 class="file-preview mt-2"
-                style="margin-top: 10px"
-              ></div>
+                style="margin-top: 10px"></div>
             </div>
             <div class="mb-3" style="margin-bottom: 15px">
               <label
@@ -363,8 +336,7 @@
                   font-weight: bold;
                   margin-bottom: 5px;
                   font-family: Arial, sans-serif;
-                "
-              >
+                ">
                 Additional Info
               </label>
               <textarea
@@ -379,8 +351,7 @@
                   border: 1px solid #ccc;
                   border-radius: 5px;
                   box-sizing: border-box;
-                "
-              ></textarea>
+                "></textarea>
             </div>
             <button
               type="submit"
@@ -394,8 +365,7 @@
                 cursor: pointer;
                 width: 100%;
                 box-sizing: border-box;
-              "
-            >
+              ">
               Submit
             </button>
           </form>
@@ -417,23 +387,19 @@
               href="#"
               data-toggle-theme
               data-trigger-switch="switch-dark-mode"
-              class="pb-2 ms-n1"
-            >
+              class="pb-2 ms-n1">
               <i
-                class="fa font-12 fa-moon rounded-s bg-highlight color-white me-3"
-              ></i>
+                class="fa font-12 fa-moon rounded-s bg-highlight color-white me-3"></i>
               <span>Dark Mode</span>
               <div class="custom-control scale-switch ios-switch">
                 <input
                   data-toggle-theme
                   type="checkbox"
                   class="ios-input"
-                  id="switch-dark-mode"
-                />
+                  id="switch-dark-mode" />
                 <label
                   class="custom-control-label"
-                  for="switch-dark-mode"
-                ></label>
+                  for="switch-dark-mode"></label>
               </div>
               <i class="fa fa-angle-right"></i>
             </a>
