@@ -154,38 +154,62 @@
     </style>
 
     <script>
-      // Load content immediately when script runs
-      let currentPath = window.location.pathname;
-
+      // Load content immediately based on the current path
       function loadContent() {
         const container = document.querySelector(".iframe-container");
+        const currentPath = window.location.pathname;
+
         if (container) {
+          let iframeSrc = "";
+
+          // Set iframe source based on the current path
+          if (currentPath.includes("app.html")) {
+            iframeSrc = "https://allofdubai.com/home";
+          } else if (currentPath.includes("about.html")) {
+            iframeSrc = "https://allofdubai.com/about";
+          } else if (currentPath.includes("page-team.html")) {
+            iframeSrc =
+              "https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y"; // Contact page
+          } else if (currentPath.includes("form.html")) {
+            iframeSrc = "https://allofdubai.com/submit";
+          } else {
+            iframeSrc = "https://allofdubai.com/default"; // Default fallback
+          }
+
+          // Inject iframe into the container
           container.innerHTML = `
-              <iframe 
-                  class="chat-iframe" 
-                  src="https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y"
-                  allowfullscreen
-              ></iframe>`;
+        <iframe 
+            class="chat-iframe" 
+            src="${iframeSrc}"
+            allowfullscreen
+        ></iframe>`;
         }
       }
 
       // Run on page load
       window.onload = loadContent;
 
-      // Watch for URL changes
-      setInterval(() => {
-        if (currentPath !== window.location.pathname) {
-          currentPath = window.location.pathname;
-          loadContent();
-        }
-      }, 100);
-
-      // Handle clicking on navigation links
+      // Handle navigation link clicks dynamically
       document.addEventListener("click", (e) => {
-        if (e.target.tagName === "A" || e.target.closest("a")) {
-          setTimeout(loadContent, 0);
+        const link = e.target.closest("a");
+        if (link && link.getAttribute("href")) {
+          const href = link.getAttribute("href");
+
+          // Prevent default navigation for single-page app behavior
+          if (href.endsWith(".html")) {
+            e.preventDefault();
+
+            // Update the URL without reloading the page
+            window.history.pushState({}, "", href);
+
+            // Reload the content dynamically
+            loadContent();
+          }
         }
       });
+
+      // Handle browser back/forward navigation
+      window.onpopstate = loadContent;
     </script>
 
     <div id="page">
