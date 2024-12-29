@@ -941,6 +941,34 @@
       </div>
     </div>
 
+    <script
+      defer
+      src="https://app.fastbots.ai/embed.js"
+      data-bot-id="cm58hs8ki0jdwsvbm8bg9vigj"></script>
+    <!-- Inline CSS via JavaScript -->
+    <script>
+      window.addEventListener("load", function () {
+        // Wait for the chatbot widget to load
+        const observer = new MutationObserver(() => {
+          const chatWidget = document.querySelector(
+            "#chat-widget-push-to-talk"
+          );
+          if (chatWidget) {
+            // Apply inline styles
+            chatWidget.style.position = "fixed";
+            chatWidget.style.top = "800px";
+            chatWidget.style.right = "20px";
+            chatWidget.style.zIndex = "100";
+
+            // Stop observing once the widget is found and styled
+            observer.disconnect();
+          }
+        });
+
+        // Observe the body for changes (where the widget is added)
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    </script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
   </body>
