@@ -154,7 +154,6 @@
     </style>
 
     <script>
-      // Load content immediately based on the current path
       function loadContent() {
         const container = document.querySelector(".iframe-container");
         const currentPath = window.location.pathname;
@@ -162,54 +161,38 @@
         if (container) {
           let iframeSrc = "";
 
-          // Set iframe source based on the current path
-          if (currentPath.includes("app.html")) {
-            iframeSrc = "https://allofdubai.com/home";
-          } else if (currentPath.includes("about.html")) {
-            iframeSrc = "https://allofdubai.com/about";
-          } else if (currentPath.includes("page-team.html")) {
+          if (currentPath === "/app.html" || currentPath === "/") {
+            iframeSrc = "https://allofdubai.com/app.html"; // Replace with your home page URL
+          } else if (currentPath === "/about.html") {
+            iframeSrc = "https://allofdubai.com/page-team.html"; // Replace with your About page URL
+          } else if (currentPath === "/page-team.html") {
             iframeSrc =
               "https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y"; // Contact page
-          } else if (currentPath.includes("form.html")) {
-            iframeSrc = "https://allofdubai.com/submit";
           } else {
-            iframeSrc = "https://allofdubai.com/default"; // Default fallback
+            iframeSrc = "https://allofdubai.com"; // Default fallback
           }
 
-          // Inject iframe into the container
           container.innerHTML = `
         <iframe 
             class="chat-iframe" 
-            src="${iframeSrc}"
+            src="${iframeSrc}" 
             allowfullscreen
         ></iframe>`;
         }
       }
 
-      // Run on page load
       window.onload = loadContent;
+      window.onpopstate = loadContent;
 
-      // Handle navigation link clicks dynamically
       document.addEventListener("click", (e) => {
         const link = e.target.closest("a");
         if (link && link.getAttribute("href")) {
+          e.preventDefault();
           const href = link.getAttribute("href");
-
-          // Prevent default navigation for single-page app behavior
-          if (href.endsWith(".html")) {
-            e.preventDefault();
-
-            // Update the URL without reloading the page
-            window.history.pushState({}, "", href);
-
-            // Reload the content dynamically
-            loadContent();
-          }
+          window.history.pushState({}, "", href);
+          loadContent();
         }
       });
-
-      // Handle browser back/forward navigation
-      window.onpopstate = loadContent;
     </script>
 
     <div id="page">
