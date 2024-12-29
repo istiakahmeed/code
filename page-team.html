@@ -98,6 +98,7 @@
     </div>
 
     <style>
+      /* Reset defaults */
       * {
         margin: 0;
         padding: 0;
@@ -107,143 +108,99 @@
       body,
       html {
         height: 100%;
+        overflow: hidden;
+        position: fixed;
         width: 100%;
       }
 
-      .page {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-      }
-
-      .header {
-        height: 60px;
-        background: white;
-        border-bottom: 1px solid #eee;
-        display: flex;
-        align-items: center;
-        padding: 0 20px;
-      }
-
+      /* Main container */
       .iframe-container {
-        flex: 1;
-        position: relative;
-      }
-
-      .chat-iframe {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
+        background: white;
+      }
+
+      /* Header styling */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: white;
+        z-index: 1000;
+        border-bottom: 1px solid #eee;
+      }
+
+      /* Bottom navigation */
+      .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: white;
+        z-index: 1000;
+        border-top: 1px solid #eee;
+      }
+
+      /* Iframe styling */
+      .chat-iframe {
+        width: 100%;
+        height: calc(
+          100% - 120px
+        ); /* Full height minus header and bottom nav */
+        margin-top: 60px; /* Space for header */
         border: none;
       }
 
-      .footer-bar-1 {
-        height: 60px;
-        background: white;
-        border-top: 1px solid #eee;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-      }
-
-      /* Media query for responsiveness */
       @media screen and (max-width: 768px) {
         .chat-iframe {
-          height: calc(100vh - 120px);
+          height: calc(100dvh - 120px);
         }
       }
     </style>
-    <script>
-      // Function to load iframe content dynamically
-      function loadContent(path) {
-        const container = document.querySelector(".iframe-container");
-
-        // Set iframe content based on the current path
-        let iframeSrc = "";
-        if (path === "/" || path === "/app.html") {
-          iframeSrc = "https://allofdubai.com/app.html"; // Replace with your home page URL
-        } else if (path === "/about.html") {
-          iframeSrc = "https://allofdubai.com/page-team.html"; // Replace with your About page URL
-        } else if (path === "/page-team.html") {
-          iframeSrc = "https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y"; // Replace with your Contact page iframe URL
-        } else if (path === "/form.html") {
-          iframeSrc = "https://allofdubai.com/form.html"; // Replace with your form page URL
-        } else {
-          iframeSrc = "https://allofdubai.com"; // Replace with a 404 or default URL
-        }
-
-        // Inject iframe into the container
-        if (container) {
-          container.innerHTML = `
-        <iframe 
-          class="chat-iframe" 
-          src="${iframeSrc}" 
-          allowfullscreen
-        ></iframe>`;
-        }
-      }
-
-      // Run on initial page load
-      window.onload = () => {
-        loadContent(window.location.pathname);
-      };
-
-      // Update content when navigation links are clicked
-      document.addEventListener("click", (e) => {
-        const link = e.target.closest("a");
-        if (link && link.getAttribute("href")) {
-          e.preventDefault(); // Prevent default navigation
-          const href = link.getAttribute("href");
-          history.pushState({}, "", href); // Update browser URL without reloading
-          loadContent(href); // Load new content
-        }
-      });
-
-      // Handle browser back/forward button navigation
-      window.onpopstate = () => {
-        loadContent(window.location.pathname);
-      };
-    </script>
 
     <div id="page">
-      <div class="page">
-        <!-- Single header -->
-        <div class="header header-fixed header-logo-center">
-          <a href="app.html" class="header-title">All Of Dubai</a>
-          <a href="app.html" data-back-button class="ml-1">
-            <img
-              src="./images/allofdubai_logo.png"
-              alt="logo"
-              style="width: 68px" />
-          </a>
-          <a href="#" data-toggle-theme style="color: #000; font-size: 24px">
-            <i class="fas fa-lightbulb"></i>
-          </a>
-        </div>
-
-        <!-- Main content -->
-        <div class="iframe-container" style="margin-top: 60px"></div>
-
-        <!-- Footer -->
-        <div id="footer-bar" class="footer-bar-1">
-          <a href="app.html"><i class="fa fa-home"></i><span>Home</span></a>
-          <a href="about.html"
-            ><i class="fa fa-info-circle"></i><span>About Us</span></a
-          >
-          <a href="page-team.html" class="active-nav"
-            ><i class="fa fa-envelope"></i><span>Contact</span></a
-          >
-          <a href="form.html"
-            ><i class="fa fa-paper-plane"></i><span>Submit</span></a
-          >
-          <a href="#menu-settings" data-menu="menu-settings"
-            ><i class="fa fa-cog"></i><span>Settings</span></a
-          >
-        </div>
+      <div class="header header-fixed header-logo-center">
+        <a href="app.html" class="header-title">All Of Dubai</a>
+        <a href="app.html" data-back-button class="ml-1">
+          <img
+            src="./images/allofdubai_logo.png"
+            alt="logo"
+            style="height: 50px; width: 60px; margin-left: 20px" />
+        </a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-4"
+          ><i class="fas fa-lightbulb"></i
+        ></a>
       </div>
-
-      <!-- Settings menu (kept as is) -->
-      <div id="menu-settings" class="menu menu-box-bottom menu-box-detached">
-        <!-- Your existing settings menu content -->
+      <div class="iframe-container">
+        <div class="header"></div>
+        <iframe
+          class="chat-iframe"
+          src="https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y"
+          allowfullscreen>
+        </iframe>
+        <div class="bottom-nav"></div>
+      </div>
+      <div id="footer-bar" class="footer-bar-1">
+        <a href="app.html"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="about.html"
+          ><i class="fa fa-info-circle"></i><span>About Us</span></a
+        >
+        <a href="page-team.html" class="active-nav"
+          ><i class="fa fa-envelope"></i><span>Contact</span></a
+        >
+        <a href="form.html">
+          <i class="fa fa-paper-plane"></i>
+          <span>Submit</span>
+        </a>
+        <a href="#menu-settings" data-menu="menu-settings"
+          ><i class="fa fa-cog"></i><span>Settings</span></a
+        >
       </div>
 
       <!-- End of Page Content-->
@@ -479,55 +436,7 @@
     </div>
 
     <!-- Inline CSS via JavaScript -->
-    <script>
-      // Dynamic iframe loader
-      function loadContent(path) {
-        const container = document.querySelector(".iframe-container");
 
-        let iframeSrc = "";
-        if (path === "/" || path === "/app.html") {
-          iframeSrc = "file:///Users/istiakahmed/Developer/code/app.html";
-        } else if (path === "/about.html") {
-          iframeSrc = "https://allofdubai.com/page-team.html";
-        } else if (path === "/page-team.html") {
-          iframeSrc = "https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y";
-        } else if (path === "/form.html") {
-          iframeSrc = "https://allofdubai.com/form.html";
-        } else {
-          iframeSrc = "https://allofdubai.com/404";
-        }
-
-        if (container) {
-          container.innerHTML = `
-            <iframe 
-              class="chat-iframe" 
-              src="${iframeSrc}" 
-              allowfullscreen
-            ></iframe>`;
-        }
-      }
-
-      // Initialize content
-      window.onload = () => {
-        loadContent(window.location.pathname);
-      };
-
-      // Intercept navigation clicks
-      document.addEventListener("click", (e) => {
-        const link = e.target.closest("a");
-        if (link && link.getAttribute("href")) {
-          e.preventDefault();
-          const href = link.getAttribute("href");
-          history.pushState({}, "", href);
-          loadContent(href);
-        }
-      });
-
-      // Handle browser back/forward
-      window.onpopstate = () => {
-        loadContent(window.location.pathname);
-      };
-    </script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
     <!-- <script>
