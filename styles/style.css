@@ -11,6 +11,7 @@ body {
   line-height: 26px !important;
   color: #6c6c6c !important;
   background-color: #f0f0f0;
+  overflow: scroll;
 }
 
 h1,
