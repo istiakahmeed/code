@@ -78,7 +78,45 @@
       sizes="180x180"
       href="app/icons/icon-192x192.png" />
   </head>
+  <style>
+    .iframe-container {
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    /* Mobile devices */
+    @media screen and (max-width: 768px) {
+      .iframe-wrapper {
+        height: 100dvh; /* dynamic viewport height for mobile */
+      }
+
+      .responsive-iframe {
+        position: relative;
+        min-height: 100dvh;
+      }
+    }
+  </style>
   <body
     class="theme-light"
     data-highlight="highlight-red"
@@ -111,9 +149,7 @@
       </div>
 
       <div id="footer-bar" class="footer-bar-1">
-        <a href="russian.html" class="active-nav"
-          ><i class="fa fa-home"></i><span>Дом</span></a
-        >
+        <a href="russian.html"><i class="fa fa-home"></i><span>Дом</span></a>
         <a href="russian-about.html"
           ><i class="fa fa-info-circle"></i><span>О нас</span></a
         >
@@ -130,32 +166,14 @@
         >
       </div>
 
-      <div
-        style="
-          max-width: 100%;
-          margin: 0 auto;
-          margin-top: 120px;
-          padding: 20px;
-          box-sizing: border-box;
-        ">
-        <div
-          style="
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-            overflow: hidden;
-          ">
+      <div class="iframe-container" style="margin-top: 75px">
+        <div class="iframe-wrapper">
           <iframe
-            style="
-              width: 100%;
-              height: 600px;
-              border: none;
-              border-radius: 8px;
-              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            "
+            class="responsive-iframe"
             src="https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y"
-            title="Embedded Content"></iframe>
+            title="Embedded Content"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </div>
       </div>
       <!-- End of Page Content-->
@@ -390,35 +408,8 @@
       </div>
     </div>
 
-    <script
-      defer
-      src="https://app.fastbots.ai/embed.js"
-      data-bot-id="cm58hs8ki0jdwsvbm8bg9vigj"></script>
     <!-- Inline CSS via JavaScript -->
 
-    <script>
-      window.addEventListener("load", function () {
-        // Wait for the chatbot widget to load
-        const observer = new MutationObserver(() => {
-          const chatWidget = document.querySelector(
-            "#chat-widget-push-to-talk"
-          );
-          if (chatWidget) {
-            // Apply inline styles
-            chatWidget.style.position = "fixed";
-            chatWidget.style.top = "85%";
-            chatWidget.style.right = "2%";
-            chatWidget.style.zIndex = "100";
-
-            // Stop observing once the widget is found and styled
-            observer.disconnect();
-          }
-        });
-
-        // Observe the body for changes (where the widget is added)
-        observer.observe(document.body, { childList: true, subtree: true });
-      });
-    </script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
     <!-- <script>
