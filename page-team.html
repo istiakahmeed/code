@@ -153,6 +153,41 @@
       }
     </style>
 
+    <script>
+      // Load content immediately when script runs
+      let currentPath = window.location.pathname;
+
+      function loadContent() {
+        const container = document.querySelector(".iframe-container");
+        if (container) {
+          container.innerHTML = `
+              <iframe 
+                  class="chat-iframe" 
+                  src="https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y"
+                  allowfullscreen
+              ></iframe>`;
+        }
+      }
+
+      // Run on page load
+      window.onload = loadContent;
+
+      // Watch for URL changes
+      setInterval(() => {
+        if (currentPath !== window.location.pathname) {
+          currentPath = window.location.pathname;
+          loadContent();
+        }
+      }, 100);
+
+      // Handle clicking on navigation links
+      document.addEventListener("click", (e) => {
+        if (e.target.tagName === "A" || e.target.closest("a")) {
+          setTimeout(loadContent, 0);
+        }
+      });
+    </script>
+
     <div id="page">
       <div class="page">
         <!-- Single header -->
@@ -170,34 +205,23 @@
         </div>
 
         <!-- Main content -->
-        <div class="iframe-container" style="margin-top: 60px">
-          <iframe
-            class="chat-iframe"
-            src="https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y"
-            allowfullscreen></iframe>
-        </div>
+        <div class="iframe-container" style="margin-top: 60px"></div>
 
         <!-- Footer -->
         <div id="footer-bar" class="footer-bar-1">
-          <!-- Modified navigation links to use custom navigation -->
-          <a href="javascript:void(0)" onclick="navigateTo('app.html')">
-            <i class="fa fa-home"></i><span>Home</span>
-          </a>
-          <a href="javascript:void(0)" onclick="navigateTo('about.html')">
-            <i class="fa fa-info-circle"></i><span>About Us</span>
-          </a>
-          <a
-            href="javascript:void(0)"
-            onclick="navigateTo('page-team.html')"
-            class="active-nav">
-            <i class="fa fa-envelope"></i><span>Contact</span>
-          </a>
-          <a href="javascript:void(0)" onclick="navigateTo('form.html')">
-            <i class="fa fa-paper-plane"></i><span>Submit</span>
-          </a>
-          <a href="#menu-settings" data-menu="menu-settings">
-            <i class="fa fa-cog"></i><span>Settings</span>
-          </a>
+          <a href="app.html"><i class="fa fa-home"></i><span>Home</span></a>
+          <a href="about.html"
+            ><i class="fa fa-info-circle"></i><span>About Us</span></a
+          >
+          <a href="page-team.html" class="active-nav"
+            ><i class="fa fa-envelope"></i><span>Contact</span></a
+          >
+          <a href="form.html"
+            ><i class="fa fa-paper-plane"></i><span>Submit</span></a
+          >
+          <a href="#menu-settings" data-menu="menu-settings"
+            ><i class="fa fa-cog"></i><span>Settings</span></a
+          >
         </div>
       </div>
 
@@ -439,33 +463,6 @@
     </div>
 
     <!-- Inline CSS via JavaScript -->
-
-    <script>
-      // Function to handle navigation
-      function navigateTo(page) {
-        // Store the current page in session storage
-        sessionStorage.setItem("currentPage", page);
-        // Navigate to the page with a reload
-        window.location.href = page;
-      }
-
-      // Check if we need to reload on page load
-      document.addEventListener("DOMContentLoaded", function () {
-        const currentPage = window.location.pathname.split("/").pop();
-        const storedPage = sessionStorage.getItem("currentPage");
-
-        if (storedPage === currentPage) {
-          // Clear the stored page
-          sessionStorage.removeItem("currentPage");
-          // Reload the iframe
-          const iframe = document.querySelector(".chat-iframe");
-          if (iframe) {
-            const currentSrc = iframe.src;
-            iframe.src = currentSrc;
-          }
-        }
-      });
-    </script>
 
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
