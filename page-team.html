@@ -145,54 +145,63 @@
         align-items: center;
       }
 
-      /* Your existing media query */
+      /* Media query for responsiveness */
       @media screen and (max-width: 768px) {
         .chat-iframe {
-          height: calc(100dvh - 120px);
+          height: calc(100vh - 120px);
         }
       }
     </style>
-
     <script>
-      function loadContent() {
+      // Function to load iframe content dynamically
+      function loadContent(path) {
         const container = document.querySelector(".iframe-container");
-        const currentPath = window.location.pathname;
 
+        // Set iframe content based on the current path
+        let iframeSrc = "";
+        if (path === "/" || path === "/app.html") {
+          iframeSrc = "https://allofdubai.com/app.html"; // Replace with your home page URL
+        } else if (path === "/about.html") {
+          iframeSrc = "https://allofdubai.com/page-team.html"; // Replace with your About page URL
+        } else if (path === "/page-team.html") {
+          iframeSrc = "https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y"; // Replace with your Contact page iframe URL
+        } else if (path === "/form.html") {
+          iframeSrc = "https://allofdubai.com/form.html"; // Replace with your form page URL
+        } else {
+          iframeSrc = "https://allofdubai.com"; // Replace with a 404 or default URL
+        }
+
+        // Inject iframe into the container
         if (container) {
-          let iframeSrc = "";
-
-          if (currentPath === "/app.html" || currentPath === "/") {
-            iframeSrc = "https://allofdubai.com/app.html"; // Replace with your home page URL
-          } else if (currentPath === "/about.html") {
-            iframeSrc = "https://allofdubai.com/page-team.html"; // Replace with your About page URL
-          } else if (currentPath === "/page-team.html") {
-            iframeSrc =
-              "https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y"; // Contact page
-          } else {
-            iframeSrc = "https://allofdubai.com"; // Default fallback
-          }
-
           container.innerHTML = `
         <iframe 
-            class="chat-iframe" 
-            src="${iframeSrc}" 
-            allowfullscreen
+          class="chat-iframe" 
+          src="${iframeSrc}" 
+          allowfullscreen
         ></iframe>`;
         }
       }
 
-      window.onload = loadContent;
-      window.onpopstate = loadContent;
+      // Run on initial page load
+      window.onload = () => {
+        loadContent(window.location.pathname);
+      };
 
+      // Update content when navigation links are clicked
       document.addEventListener("click", (e) => {
         const link = e.target.closest("a");
         if (link && link.getAttribute("href")) {
-          e.preventDefault();
+          e.preventDefault(); // Prevent default navigation
           const href = link.getAttribute("href");
-          window.history.pushState({}, "", href);
-          loadContent();
+          history.pushState({}, "", href); // Update browser URL without reloading
+          loadContent(href); // Load new content
         }
       });
+
+      // Handle browser back/forward button navigation
+      window.onpopstate = () => {
+        loadContent(window.location.pathname);
+      };
     </script>
 
     <div id="page">
@@ -206,9 +215,9 @@
               alt="logo"
               style="width: 68px" />
           </a>
-          <a href="#" data-toggle-theme style="color: #000; font-size: 24px"
-            ><i class="fas fa-lightbulb"></i
-          ></a>
+          <a href="#" data-toggle-theme style="color: #000; font-size: 24px">
+            <i class="fas fa-lightbulb"></i>
+          </a>
         </div>
 
         <!-- Main content -->
@@ -470,7 +479,55 @@
     </div>
 
     <!-- Inline CSS via JavaScript -->
+    <script>
+      // Dynamic iframe loader
+      function loadContent(path) {
+        const container = document.querySelector(".iframe-container");
 
+        let iframeSrc = "";
+        if (path === "/" || path === "/app.html") {
+          iframeSrc = "file:///Users/istiakahmed/Developer/code/app.html";
+        } else if (path === "/about.html") {
+          iframeSrc = "https://allofdubai.com/page-team.html";
+        } else if (path === "/page-team.html") {
+          iframeSrc = "https://app.fastbots.ai/embed/cm58p1alw0lwxsvbmphse4n5y";
+        } else if (path === "/form.html") {
+          iframeSrc = "https://allofdubai.com/form.html";
+        } else {
+          iframeSrc = "https://allofdubai.com/404";
+        }
+
+        if (container) {
+          container.innerHTML = `
+            <iframe 
+              class="chat-iframe" 
+              src="${iframeSrc}" 
+              allowfullscreen
+            ></iframe>`;
+        }
+      }
+
+      // Initialize content
+      window.onload = () => {
+        loadContent(window.location.pathname);
+      };
+
+      // Intercept navigation clicks
+      document.addEventListener("click", (e) => {
+        const link = e.target.closest("a");
+        if (link && link.getAttribute("href")) {
+          e.preventDefault();
+          const href = link.getAttribute("href");
+          history.pushState({}, "", href);
+          loadContent(href);
+        }
+      });
+
+      // Handle browser back/forward
+      window.onpopstate = () => {
+        loadContent(window.location.pathname);
+      };
+    </script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
     <!-- <script>
