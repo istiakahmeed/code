@@ -79,31 +79,7 @@
       sizes="180x180"
       href="app/icons/icon-192x192.png" />
   </head>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-    }
 
-    .form-container {
-      max-width: 600px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .file-preview img {
-      width: 50px;
-      margin: 5px;
-    }
-
-    .dropdown-menu {
-      max-height: 200px;
-      overflow-y: auto;
-    }
-  </style>
   <body
     style="position: static; overflow: scroll"
     class="theme-light"
@@ -123,6 +99,19 @@
     </div>
 
     <div id="page">
+      <div class="header header-fixed header-logo-center">
+        <a href="russian.html" class="header-title">All Of Dubai</a>
+        <a href="russian.html" data-back-button class="ml-1">
+          <img
+            src="./images/allofdubai_logo.png"
+            alt="logo"
+            style="width: 68px" />
+        </a>
+        <a href="#" data-toggle-theme style="color: #000; font-size: 24px"
+          ><i class="fas fa-lightbulb"></i
+        ></a>
+      </div>
+
       <div id="footer-bar" class="footer-bar-1">
         <a href="russian.html"><i class="fa fa-home"></i><span>Дом</span></a>
         <a href="russian-about.html"
@@ -133,7 +122,7 @@
         >
         <a href="russian-form.html" class="active-nav">
           <i class="fa fa-paper-plane"></i>
-          <span>Отправить</span>
+          <span>Недвижимость</span>
         </a>
 
         <a href="#menu-settings" data-menu="menu-settings"
@@ -144,291 +133,16 @@
       <!-- Top Banner Image -->
 
       <div
-        class="container"
+        class="page-content header-clear-medium"
         style="
-          max-width: 500px;
-          margin: 0 auto;
-          padding: 20px;
-          border: 1px solid #ddd;
-          border-radius: 10px;
-          background-color: #f9f9f9;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
         ">
-        <!-- Top Banner Image -->
-        <div
-          class="banner-container"
-          style="text-align: center; margin-bottom: 20px">
-          <img
-            src="./images/register-img/arabic-reg.png"
-            alt="Banner Image"
-            style="width: 100%; border-radius: 10px" />
-        </div>
-
-        <div class="form-container" style="padding: 15px">
-          <h3
-            class="text-center mb-4"
-            style="
-              text-align: center;
-              margin-bottom: 20px;
-              font-family: Arial, sans-serif;
-              color: #333;
-            ">
-            Add Your Information
-          </h3>
-          <form
-            id="customForm"
-            action="http://localhost:3000/submit-form"
-            method="POST"
-            enctype="multipart/form-data">
-            <div class="mb-3" style="margin-bottom: 15px">
-              <label
-                for="name"
-                class="form-label"
-                style="
-                  display: block;
-                  font-weight: bold;
-                  margin-bottom: 5px;
-                  font-family: Arial, sans-serif;
-                ">
-                Name
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                required
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  border: 1px solid #ccc;
-                  border-radius: 5px;
-                  box-sizing: border-box;
-                " />
-            </div>
-            <div class="mb-3" style="margin-bottom: 15px">
-              <label
-                for="email"
-                class="form-label"
-                style="
-                  display: block;
-                  font-weight: bold;
-                  margin-bottom: 5px;
-                  font-family: Arial, sans-serif;
-                ">
-                Email
-              </label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                oninput="validateEmail()"
-                required
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  border: 1px solid #ccc;
-                  border-radius: 5px;
-                  box-sizing: border-box;
-                " />
-            </div>
-            <div
-              id="sendOtpButtonContainer"
-              class="mb-3"
-              style="display: none; margin-bottom: 15px">
-              <button
-                type="button"
-                class="btn btn-primary"
-                onclick="sendOtp()"
-                style="
-                  background-color: #007bff;
-                  color: #fff;
-                  padding: 10px 15px;
-                  border: none;
-                  border-radius: 5px;
-                  cursor: pointer;
-                  width: 100%;
-                  box-sizing: border-box;
-                ">
-                Send OTP
-              </button>
-            </div>
-            <div class="mb-3" style="margin-bottom: 15px">
-              <label
-                for="otp"
-                class="form-label"
-                style="
-                  display: block;
-                  font-weight: bold;
-                  margin-bottom: 5px;
-                  font-family: Arial, sans-serif;
-                ">
-                OTP
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="otp"
-                name="otp"
-                placeholder="Enter OTP"
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  border: 1px solid #ccc;
-                  border-radius: 5px;
-                  box-sizing: border-box;
-                " />
-            </div>
-
-            <div
-              class="mb-3 dropdown-container"
-              style="margin-bottom: 15px; position: relative">
-              <label
-                for="category"
-                class="form-label"
-                style="
-                  display: block;
-                  font-weight: bold;
-                  margin-bottom: 5px;
-                  font-family: Arial, sans-serif;
-                ">
-                Category
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="category"
-                name="category"
-                placeholder="Select Category"
-                readonly
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  border: 1px solid #ccc;
-                  border-radius: 5px;
-                  box-sizing: border-box;
-                  cursor: pointer;
-                " />
-              <ul
-                class="dropdown-menu"
-                id="categoryDropdown"
-                name="categoryDropdown"
-                style="
-                  list-style: none;
-                  padding: 10px;
-                  margin: 0;
-                  border: 1px solid #ccc;
-                  border-radius: 5px;
-                  background-color: #fff;
-                  position: absolute;
-                  top: 100%;
-                  left: 0;
-                  width: 100%;
-                  display: none;
-                  box-sizing: border-box;
-                  z-index: 1000;
-                ">
-                <li><a class="dropdown-item" href="#">Beauty Salon</a></li>
-                <li><a class="dropdown-item" href="#">Car Service</a></li>
-                <li><a class="dropdown-item" href="#">Entertainment</a></li>
-                <li><a class="dropdown-item" href="#">Club</a></li>
-                <li><a class="dropdown-item" href="#">Fitness</a></li>
-                <li><a class="dropdown-item" href="#">Health</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Import & Export</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Jobs</a></li>
-                <li><a class="dropdown-item" href="#">Massage</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Real Estate Agent</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Rental Car</a></li>
-                <li><a class="dropdown-item" href="#">Shops</a></li>
-                <li><a class="dropdown-item" href="#">Visa & Ticket</a></li>
-                <li><a class="dropdown-item" href="#">Food</a></li>
-                <li><a class="dropdown-item" href="#">Mobile</a></li>
-                <li><a class="dropdown-item" href="#">Laptop</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Co. Registration</a>
-                </li>
-              </ul>
-            </div>
-            <div class="mb-3" style="margin-bottom: 15px">
-              <label
-                for="images"
-                class="form-label"
-                style="
-                  display: block;
-                  font-weight: bold;
-                  margin-bottom: 5px;
-                  font-family: Arial, sans-serif;
-                ">
-                Upload Images
-              </label>
-              <input
-                type="file"
-                class="form-control"
-                id="images"
-                multiple
-                name="images"
-                onchange="handleFileSelect()"
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  border: 1px solid #ccc;
-                  border-radius: 5px;
-                  box-sizing: border-box;
-                " />
-              <div
-                id="imagePreview"
-                class="file-preview mt-2"
-                style="margin-top: 10px"></div>
-            </div>
-            <div class="mb-3" style="margin-bottom: 15px">
-              <label
-                for="additionalInfo"
-                class="form-label"
-                style="
-                  display: block;
-                  font-weight: bold;
-                  margin-bottom: 5px;
-                  font-family: Arial, sans-serif;
-                ">
-                Additional Info
-              </label>
-              <textarea
-                class="form-control"
-                id="additionalInfo"
-                name="additionalInfo"
-                rows="4"
-                placeholder="Enter any additional information"
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  border: 1px solid #ccc;
-                  border-radius: 5px;
-                  box-sizing: border-box;
-                "></textarea>
-            </div>
-            <button
-              type="submit"
-              class="btn btn-success w-100"
-              style="
-                background-color: #28a745;
-                color: #fff;
-                padding: 10px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                width: 100%;
-                box-sizing: border-box;
-              ">
-              Submit
-            </button>
-          </form>
-        </div>
+        <iframe
+          style="width: 100%; height: 100%; border: none"
+          src="https://app.fastbots.ai/embed/cm595e5o60mkxsvbmgxp49flx"></iframe>
       </div>
 
       <!-- End of Page Content-->
