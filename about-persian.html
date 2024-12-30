@@ -136,69 +136,17 @@
 
       <div
         class="page-content header-clear-medium"
-        style="margin-top: 15px; padding-left: 20px; padding-right: 20px">
-        <div>
-          <div class="d-flex flex-column align-items-center">
-            <!-- Card 1 -->
-            <div
-              class="card"
-              style="
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                border: none;
-                overflow: hidden;
-              ">
-              <img
-                src="./images/persian/pr-1.png"
-                class="card-img-top"
-                alt="Placeholder Image"
-                style="margin: 0; padding: 0; border-radius: 10px 10px 0 0" />
-            </div>
-            <!-- Card 2 -->
-            <div
-              class="card"
-              style="width: 100%; margin: 0; padding: 0; border: none">
-              <img
-                src="./images/persian/pr-2.png"
-                class="card-img-top"
-                alt="Placeholder Image"
-                style="margin: 0; padding: 0; border-radius: 0" />
-            </div>
-            <!-- Card 3 -->
-            <div
-              class="card"
-              style="width: 100%; margin: 0; padding: 0; border: none">
-              <img
-                src="./images/persian/pr-3.png"
-                class="card-img-top"
-                alt="Placeholder Image"
-                style="margin: 0; padding: 0; border-radius: 0" />
-            </div>
-            <!-- Card 4 -->
-            <div
-              class="card"
-              style="width: 100%; margin: 0; padding: 0; border: none">
-              <img
-                src="./images/persian/pr-4.png"
-                class="card-img-top"
-                alt="Placeholder Image"
-                style="margin: 0; padding: 0; border-radius: 0" />
-            </div>
-            <!-- Card 5 -->
-            <div
-              class="card"
-              style="width: 100%; margin: 0; padding: 0; border: none">
-              <img
-                src="./images/persian/pr-5.png"
-                class="card-img-top"
-                alt="Placeholder Image"
-                style="margin: 0; padding: 0; border-radius: 0 0 10px 10px" />
-            </div>
-          </div>
-        </div>
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        ">
+        <iframe
+          style="width: 100%; height: 100%; border: none"
+          src="https://app.fastbots.ai/embed/cm595xmu70mpxsvbmvg3lm2ep">
+        </iframe>
       </div>
-
       <!-- End of Page Content-->
       <!-- All Menus, Action Sheets, Modals, Notifications, Toasts, Snackbars get Placed outside the <div class="page-content"> -->
       <div id="menu-settings" class="menu menu-box-bottom menu-box-detached">
@@ -431,78 +379,6 @@
       </div>
     </div>
 
-    <script
-      defer
-      src="https://app.fastbots.ai/embed.js"
-      data-bot-id="cm58hs8ki0jdwsvbm8bg9vigj"></script>
-
-    <script>
-      window.addEventListener("load", function () {
-        // Wait for the chatbot widget to load
-        const observer = new MutationObserver(() => {
-          const chatWidget = document.querySelector(
-            "#chat-widget-push-to-talk"
-          );
-          if (chatWidget) {
-            // Apply initial styles
-            chatWidget.style.position = "fixed";
-            chatWidget.style.top = "85%";
-            chatWidget.style.right = "2%";
-            chatWidget.style.zIndex = "100";
-
-            // Stop observing once the widget is found and styled
-            observer.disconnect();
-
-            // Add dynamic position update function
-            window.updateChatWidgetPosition = function (top, right) {
-              chatWidget.style.top = top;
-              chatWidget.style.right = right;
-            };
-
-            console.log(
-              "Chat widget ready! Use `updateChatWidgetPosition(top, right)` to change position."
-            );
-          }
-        });
-
-        // Observe the body for changes (where the widget is added)
-        observer.observe(document.body, { childList: true, subtree: true });
-      });
-    </script>
-
-    <script>
-      window.addEventListener("load", function () {
-        // Wait for the chatbot widget to load
-        const observer = new MutationObserver(() => {
-          const chatWidget = document.querySelector(
-            "#chat-widget-push-to-talk"
-          );
-          if (chatWidget) {
-            // Apply initial styles
-            chatWidget.style.position = "fixed";
-            chatWidget.style.top = "85%";
-            chatWidget.style.right = "2%";
-            chatWidget.style.zIndex = "100";
-
-            // Stop observing once the widget is found and styled
-            observer.disconnect();
-
-            // Add dynamic position update function
-            window.updateChatWidgetPosition = function (top, right) {
-              chatWidget.style.top = top;
-              chatWidget.style.right = right;
-            };
-
-            console.log(
-              "Chat widget ready! Use `updateChatWidgetPosition(top, right)` to change position."
-            );
-          }
-        });
-
-        // Observe the body for changes (where the widget is added)
-        observer.observe(document.body, { childList: true, subtree: true });
-      });
-    </script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
   </body>
