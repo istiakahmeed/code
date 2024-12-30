@@ -507,6 +507,40 @@
         observer.observe(document.body, { childList: true, subtree: true });
       });
     </script>
+
+    <script>
+      window.addEventListener("load", function () {
+        // Wait for the chatbot widget to load
+        const observer = new MutationObserver(() => {
+          const chatWidget = document.querySelector(
+            "#chat-widget-push-to-talk"
+          );
+          if (chatWidget) {
+            // Apply initial styles
+            chatWidget.style.position = "fixed";
+            chatWidget.style.top = "85%";
+            chatWidget.style.right = "2%";
+            chatWidget.style.zIndex = "100";
+
+            // Stop observing once the widget is found and styled
+            observer.disconnect();
+
+            // Add dynamic position update function
+            window.updateChatWidgetPosition = function (top, right) {
+              chatWidget.style.top = top;
+              chatWidget.style.right = right;
+            };
+
+            console.log(
+              "Chat widget ready! Use `updateChatWidgetPosition(top, right)` to change position."
+            );
+          }
+        });
+
+        // Observe the body for changes (where the widget is added)
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    </script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
   </body>
